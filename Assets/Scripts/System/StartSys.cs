@@ -33,17 +33,31 @@ public class StartSys : SystemRoot
     public void EnterStart()
     {
         startPanel.SetWindowState(true);
+        audioSvc.PlayBgMusic(PathDefine.bgMusic);
     }
 
     public void OpenInstructionPanel()
     {
-        settingPanel.SetWindowState(false);
-        instructionPanel.SetWindowState(true);
+        if(settingPanel.gameObject.activeInHierarchy)
+        {
+            settingPanel.SetWindowState(false);
+        }
+        if(!instructionPanel.gameObject.activeInHierarchy)
+        {
+            instructionPanel.SetWindowState(true);
+        }
+
     }
 
     public void OpenSettingPanel()
     {
-        instructionPanel.SetWindowState(false);
-        settingPanel.SetWindowState(true);
+        if(!settingPanel.gameObject.activeInHierarchy)
+        {
+            settingPanel.SetWindowState(true);
+        }
+        if(instructionPanel.gameObject.activeInHierarchy)
+        {
+            instructionPanel.SetWindowState(false);
+        }
     }
 }

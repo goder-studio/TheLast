@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item ID = "1">
+		<spawnInterval>2.0</spawnInterval>
+		<enemyCount>1</enemyCount>
+		<enemyHp>100</enemyHp>
+		<enemyDamage>10</enemyDamage>
+	</item>
+	<item ID = "2">
+		<spawnInterval>2.0</spawnInterval>
+		<enemyCount>1</enemyCount>
+		<enemyHp>100</enemyHp>
+		<enemyDamage>10</enemyDamage>
+	</item>
+		<item ID = "3">
+		<spawnInterval>1.5</spawnInterval>
+		<enemyCount>1</enemyCount>
+		<enemyHp>100</enemyHp>
+		<enemyDamage>20</enemyDamage>
+	</item>
+</root>

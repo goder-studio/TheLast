@@ -208,8 +208,21 @@ public class FpsController : MonoBehaviour
         Jump();
         PlayFootStepSound();
         SwitchWeapon();
+        ControlOptionPanel();
     }
 
+    private void ControlOptionPanel()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab) )
+        {
+            BattleSys.Instance.ShowOptionPanel();
+        }
+        
+        if(Input.GetKeyUp(KeyCode.Tab))
+        {
+            BattleSys.Instance.CloseOptionPanel();
+        }
+    }
 
     private void SwitchWeapon()
     {

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\Common\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\Common\Bullet\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\Common\ButtonInteraction.cs" />
     <Compile Include="Assets\Scripts\Common\Casings_&amp;_Projectiles\CasingScript.cs" />
     <Compile Include="Assets\Scripts\Common\Casings_&amp;_Projectiles\GrenadeScript.cs" />
     <Compile Include="Assets\Scripts\Common\Constant.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Scripts\UIPanel\BasePanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\InstructionPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\LoadingPanel.cs" />
+    <Compile Include="Assets\Scripts\UIPanel\OptionPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\PlayerPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\SettingPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\StartPanel.cs" />
@@ -120,6 +122,7 @@
     <None Include="Assets\PolygonZombies\Shaders\POLYGON_Zombies.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
     <None Include="Assets\Readme.txt" />
+    <None Include="Assets\Resources\Cfgs\EnemyWave.xml" />
     <None Include="Assets\PolygonWar\Materials\Shader\Particle VertexLit Blended_Backface.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />

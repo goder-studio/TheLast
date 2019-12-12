@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class EnemyWave
+{
+    public int waveIndex;
+    //敌人生成间隔
+    public float enemySpawnInterval;
+    //敌人数目
+    public int enemyCount;
+    //敌人属性
+    public BattleProps enemyBattleProps;
+}
+
 public class BattleMgr : MonoBehaviour
 {
     private StateMgr stateMgr;
@@ -11,19 +22,41 @@ public class BattleMgr : MonoBehaviour
     public EntityPlayer entityPlayer;
 
     private Dictionary<string, EntityEnemy> enemyDicts = new Dictionary<string, EntityEnemy>();
+    private List<EnemyWave> enemyWaveList = new List<EnemyWave>();
 
+    private EnemyWave curEnemyWave;
+    private int curWaveIndex = 0;
     private int enemyCount = 0;
+    private int totalKillCount = 0;
+
+    private float intervalTimer = 0;
+
     private void Update()
     {
         foreach (EntityEnemy entityEnemy in enemyDicts.Values)
         {
             entityEnemy.TickAllLogic();
-
         }
 
-        if(enemyDicts.Count == 0)
+        Debug.Log("CurWaveIndex：" + curWaveIndex + " EnemyCount：" + enemyDicts.Count + " TotalKillCount：" + totalKillCount); ;
+        if(curWaveIndex < enemyWaveList.Count - 1)
         {
-            SpawnEnemy();
+            intervalTimer += Time.deltaTime;
+            if (intervalTimer >= curEnemyWave.enemySpawnInterval && enemyCount < curEnemyWave.enemyCount)
+            {
+                intervalTimer = 0;
+                SpawnEnemy();
+            }
+
+            //一批怪物被消灭，更新数据
+            if (enemyDicts.Count == 0)
+            {
+                enemyCount = 0;
+                curWaveIndex++;
+                curEnemyWave = enemyWaveList[curWaveIndex];
+                SpawnEnemy();
+                intervalTimer = 0;
+            }
         }
     }
 
@@ -33,6 +66,9 @@ public class BattleMgr : MonoBehaviour
 
         stateMgr = gameObject.AddComponent<StateMgr>();
         stateMgr.Init();
+
+        enemyWaveList = resSvc.GetAllEnemyWaveCfgs();
+        curEnemyWave = enemyWaveList[curWaveIndex];
 
         //加载主角与怪物
         LoadPlayer();
@@ -49,7 +85,6 @@ public class BattleMgr : MonoBehaviour
             player.transform.localScale = Vector3.one;
 
             playerController = player.GetComponent<FpsController>();
-            BattleSys.Instance.SetPlayerPanel(player.GetComponentInChildren<PlayerPanel>());
 
             entityPlayer = new EntityPlayer
             {
@@ -94,8 +129,8 @@ public class BattleMgr : MonoBehaviour
 
             BattleProps battleProps = new BattleProps
             {
-                hp = 200,
-                damage = 10,
+                hp = curEnemyWave.enemyBattleProps.hp,
+                damage = curEnemyWave.enemyBattleProps.damage,
             };
             entityEnemy.SetBattleProps(battleProps);
             entityEnemy.Born();
@@ -157,4 +192,14 @@ public class BattleMgr : MonoBehaviour
         go.AddComponent<AutoDestroy>();
     }
     #endregion
+
+    public void AddKillCount()
+    {
+        totalKillCount += 1;
+    }
+
+    public int GetTotalKillCount()
+    {
+        return totalKillCount;
+    }
 }

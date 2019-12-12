@@ -267,3 +267,15 @@ D:\Unity Project WorkSpace\DontStopShooting\obj\Debug\Assembly-CSharp.csproj.Cor
 D:\Unity Project WorkSpace\DontStopShooting\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Unity Project WorkSpace\DontStopShooting\obj\Debug\Assembly-CSharp.dll
 D:\Unity Project WorkSpace\DontStopShooting\obj\Debug\Assembly-CSharp.pdb
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DemiLib.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween43.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween46.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween50.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTweenPro.dll
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DemiLib.xml
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween.xml
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween43.xml
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween46.xml
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTween50.xml
+D:\Unity Project WorkSpace\DontStopShooting\Temp\bin\Debug\DOTweenPro.xml

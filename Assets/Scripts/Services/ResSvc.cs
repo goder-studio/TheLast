@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class ResSvc : MonoBehaviour
 
     public void InitSvc()
     {
+        InitEnemyWaveCfgs(PathDefine.enemyWaveCfgs);
         Debug.Log("Init ResSvc Done");
     }
 
@@ -35,8 +37,10 @@ public class ResSvc : MonoBehaviour
     private Dictionary<string, Sprite> spriteDicts = new Dictionary<string, Sprite>();
     //存储贴图的字典
     private Dictionary<string, Texture> textureDicts = new Dictionary<string, Texture>();
-    //音效资源
+    //存储音效资源的字典
     private Dictionary<string, AudioClip> audioClipDicts = new Dictionary<string, AudioClip>();
+    //存储动画的字典
+    private Dictionary<string, AnimationClip> animationClipDicts = new Dictionary<string, AnimationClip>();
 
 
     public void AsyncLoadScene(int sceneIndex,Action finish)
@@ -157,6 +161,23 @@ public class ResSvc : MonoBehaviour
         return audioClip;
     }
 
+    /// <summary>
+    ///加载动画资源
+    /// </summary>
+    public AnimationClip LoadAnimationClip(string path,bool cache = true)
+    {
+        AnimationClip aniClip = null;
+        if(!animationClipDicts.TryGetValue(path,out aniClip))
+        {
+            aniClip = Resources.Load<AnimationClip>(path);
+            if(cache)
+            {
+                animationClipDicts.Add(path, aniClip);
+            }
+        }
+        return aniClip;
+    }
+
     private void Update()
     {
         if(progressUpdate != null)
@@ -164,4 +185,69 @@ public class ResSvc : MonoBehaviour
             progressUpdate();
         }
     }
+
+    #region 初始化配置文件
+    private Dictionary<int, EnemyWave> enemyWaveDicts = new Dictionary<int, EnemyWave>();
+
+    public void InitEnemyWaveCfgs(string path)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path);
+
+        XmlNode root = xmlDoc.SelectSingleNode("root");
+        XmlNodeList nodeList = root.ChildNodes;
+        foreach(XmlNode node in nodeList)
+        {
+            int ID = int.Parse(node.Attributes["ID"].Value);
+            EnemyWave enemyWave = new EnemyWave
+            {
+                waveIndex = ID,
+                enemyBattleProps = new BattleProps(),
+            };
+            XmlNodeList fieldNodeList = node.ChildNodes;
+            foreach(XmlNode fieldNode in fieldNodeList)
+            {
+                switch (fieldNode.Name)
+                {
+                    case "spawnInterval":
+                        enemyWave.enemySpawnInterval = float.Parse(fieldNode.InnerText);
+                        break;
+                    case "enemyCount":
+                        enemyWave.enemyCount = int.Parse(fieldNode.InnerText);
+                        break;
+                    case "enemyHp":
+                        enemyWave.enemyBattleProps.hp = int.Parse(fieldNode.InnerText);
+                        break;
+                    case "enemyDamage":
+                        enemyWave.enemyBattleProps.damage = int.Parse(fieldNode.InnerText);
+                        break;
+                }
+            }
+            if(!enemyWaveDicts.ContainsKey(ID))
+            {
+                enemyWaveDicts.Add(ID, enemyWave);
+            }
+        }
+    }
+
+    public EnemyWave GetEnemyWaveCfg(int id)
+    {
+        EnemyWave enemyWave = null;
+        if(enemyWaveDicts.TryGetValue(id,out enemyWave))
+        {
+            return enemyWave;
+        }
+        return null;
+    }
+
+    public List<EnemyWave> GetAllEnemyWaveCfgs()
+    {
+        List<EnemyWave> results = new List<EnemyWave>();
+        foreach(var pair in enemyWaveDicts)
+        {
+            results.Add(pair.Value);
+        }
+        return results;
+    }
+    #endregion
 }

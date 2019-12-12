@@ -11,10 +11,17 @@ public class PathDefine
 
     public const string PlayerPrefab = "Prefabs/FpsPlayer";
     public const string EnemyPrefab = "Prefabs/MaleZombie";
-    public const string CursorPrefab = "Prefabs/UI/Cursor";
 
     public const string BloodPrefab = "Effect/Blood_Splash_Cone";
 
     public static readonly string[] EnemySkins = { "Texture/ZN_Male","Texture/ZN_Male2","Texture/ZN_Male3","Texture/ZN_Male4" };
-    public const string CursorTexture = "Texture/Cursor";
+
+    public const string btnClickSound = "Audios/btnClick";
+    public const string btnHoverSound = "Audios/btnHover";
+    public const string bgMusic = "Audios/bgMusic";
+
+    public const string AniOpenOptionPanel = "Animation/OpenOptionPanel";
+    public const string AniCloseOptionPanel = "Animation/CloseOptionPanel";
+
+    public const string enemyWaveCfgs = "Assets/Resources/Cfgs/EnemyWave.xml";
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerPanel : MonoBehaviour
+public class PlayerPanel : BasePanel
 {
     public Text txtCurWeapon;
     public Text txtCurrentAmmo;
@@ -17,6 +17,11 @@ public class PlayerPanel : MonoBehaviour
     private bool changeHp = false;
     private Color targetColor = Constant.colorGreen;
     private float targetFillAmount;
+
+    protected override void InitWindow()
+    {
+        base.InitWindow();
+    }
 
     private void Update()
     {
@@ -33,41 +38,40 @@ public class PlayerPanel : MonoBehaviour
 
     public void InitPanel(string weaponName,int totalAmmo,ShootMode shootmode,string spritePath)
     {
-        txtCurrentAmmo.text = weaponName;
-        txtTotalAmmo.text = totalAmmo.ToString();
-        txtCurrentShootMode.text = shootmode.ToString();
-        imgWeaponIcon.sprite = ResSvc.Instance.LoadSprite(spritePath);
-        //imgWeaponIcon.sprite = Resources.Load<Sprite>(spritePath);
+        SetText(txtCurrentAmmo, weaponName);
+        SetText(txtTotalAmmo, totalAmmo);
+        SetText(txtCurrentShootMode, shootmode.ToString());
+        SetImage(imgWeaponIcon, ResSvc.Instance.LoadSprite(spritePath));
     }
 
     public void SetCurWeapon(string weaponName)
     {
-        txtCurWeapon.text = weaponName;
+        SetText(txtCurWeapon, weaponName);
     }
 
     public void SetCurrentAmmo(int count)
     {
-        txtCurrentAmmo.text = count.ToString();
+        SetText(txtCurrentAmmo, count);
     }
 
     public void SetTotalAmmo(int count)
     {
-        txtTotalAmmo.text = count.ToString();
+        SetText(txtTotalAmmo, count);
     }
 
     public void SetCurrentShootMode(ShootMode shootmode)
     {
-        txtCurrentShootMode.text = shootmode.ToString();
+        SetText(txtCurrentShootMode, shootmode.ToString());
     }
 
     public void SetWeaponIcon(Sprite sprite)
     {
-        imgWeaponIcon.sprite = sprite;
+        SetImage(imgWeaponIcon, sprite);
     }
 
     public void SetHp(int hp)
     {
-        txtHp.text = hp.ToString();
+        SetText(txtHp, hp);
         changeHp = true;
         targetFillAmount = hp * 1.0f / 100;
         if (hp >= 80 && hp <= 100)
@@ -86,10 +90,10 @@ public class PlayerPanel : MonoBehaviour
 
     public void ShowSwitchShootModeTips(ShootMode shootmode)
     {
-        txtSwitchShootMode.gameObject.SetActive(true);
+        SetActive(txtSwitchShootMode, true);
         string tips = "开火模式：";
         tips += shootmode.ToString();
-        txtSwitchShootMode.text = tips;
+        SetText(txtSwitchShootMode, tips);
         txtSwitchShootMode.GetComponent<Animation>().Play();
     }
 }

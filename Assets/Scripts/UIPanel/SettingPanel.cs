@@ -34,7 +34,8 @@ public class SettingPanel : BasePanel
 
     private void OnBtnControlBgMusicClick()
     {
-        if(audioSvc.isActiveBgMusic)
+        audioSvc.PlayEffectSound(PathDefine.btnClickSound);
+        if (audioSvc.isActiveBgMusic)
         {
             audioSvc.InActiveBgMusic();
             btn_ControlBgMusic.GetComponent<Image>().sprite = resSvc.LoadSprite(PathDefine.checknotSprite);
@@ -48,6 +49,7 @@ public class SettingPanel : BasePanel
 
     private void OnBtnControlEffectSoundClick()
     {
+        audioSvc.PlayEffectSound(PathDefine.btnClickSound);
         if (audioSvc.isActiveEffectSound)
         {
             audioSvc.InActiveEffectSound();

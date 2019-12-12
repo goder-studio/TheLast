@@ -19,7 +19,8 @@ public class BattleSys : SystemRoot
     }
     #endregion
 
-    private PlayerPanel playerPanel;
+    public PlayerPanel playerPanel;
+    public OptionPanel optionPanel;
     private BattleMgr battleMgr;
 
     public override void InitSys()
@@ -30,11 +31,12 @@ public class BattleSys : SystemRoot
 
     public void EnterBattle()
     {
-
         resSvc.AsyncLoadScene(Constant.SceneMainID, () =>
         {
             battleMgr = gameObject.AddComponent<BattleMgr>();
             battleMgr.Init();
+            playerPanel.SetWindowState(true);
+            audioSvc.StopBgMusic();
             //GameManager.Instance.HideCursor();
         });
     }
@@ -92,6 +94,25 @@ public class BattleSys : SystemRoot
     {
         playerPanel.ShowSwitchShootModeTips(shootmode);
     }
+
+    public void ShowOptionPanel()
+    {
+        if(optionPanel.gameObject.activeInHierarchy)
+        {
+            optionPanel.animation.clip = resSvc.LoadAnimationClip(PathDefine.AniOpenOptionPanel);
+            optionPanel.animation.Play();
+        }
+        else
+        {
+            optionPanel.SetWindowState(true);
+        }
+    }
+
+    public void CloseOptionPanel()
+    {
+        optionPanel.animation.clip = resSvc.LoadAnimationClip(PathDefine.AniCloseOptionPanel);
+        optionPanel.animation.Play();
+    }
     #endregion
 
     #region BattleMgr Operation
@@ -129,6 +150,16 @@ public class BattleSys : SystemRoot
             return battleMgr.entityPlayer;
         }
         return null;
+    }
+
+    public void AddKillCount()
+    {
+        battleMgr.AddKillCount();
+    }
+
+    public int GetTotalKillCount()
+    {
+        return battleMgr.GetTotalKillCount();
     }
     #endregion
 }
