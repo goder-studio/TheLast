@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     public LoadingPanel loadingPanel;
     public Texture2D img_Cursor;
 
+    public bool isPauseGame = false;
 
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
+        SceneManager.LoadScene(Constant.SceneMainID);
         startSys.EnterStart();
     }
 
@@ -53,23 +56,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-   //public void ShowCursor()
-   //{
-   //    showCursor = true;
-   //    img_Cursor.gameObject.SetActive(true);
-   //    Cursor.lockState = CursorLockMode.None;
-   //}
+    public void ShowCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
-   //public void HideCursor()
-   //{
-   //    showCursor = false;
-   //    img_Cursor.gameObject.SetActive(false);
-   //    Cursor.lockState = CursorLockMode.Locked;
-   //}
-
-    //private void UpdateCursorPosition()
-    //{
-    //    img_Cursor.transform.position = Input.mousePosition + new Vector3(img_Cursor.rectTransform.sizeDelta.x / 2, -img_Cursor.rectTransform.sizeDelta.y / 2, 0);
-    //}
+    public void HideCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
 }

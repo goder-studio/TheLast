@@ -43,18 +43,22 @@ public class ResSvc : MonoBehaviour
     private Dictionary<string, AnimationClip> animationClipDicts = new Dictionary<string, AnimationClip>();
 
 
-    public void AsyncLoadScene(int sceneIndex,Action finish)
+    public void AsyncLoadScene(int sceneIndex,Action finish,bool isWait)
     {
         //显示加载界面
         GameManager.Instance.loadingPanel.SetWindowState(true);
         AsyncOperation sceneAsync = SceneManager.LoadSceneAsync(sceneIndex);
-        sceneAsync.allowSceneActivation = false;
+        if(isWait)
+        {
+                    sceneAsync.allowSceneActivation = false;
+        }
+
         progressUpdate = () =>
         {
             float progress = sceneAsync.progress;
             //设置进度条
             GameManager.Instance.loadingPanel.SetProgress(progress);
-            if(progress >= 0.9f)
+            if(progress >= 0.9f && isWait)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -209,6 +213,9 @@ public class ResSvc : MonoBehaviour
             {
                 switch (fieldNode.Name)
                 {
+                    case "delayTime":
+                        enemyWave.delayTime = float.Parse(fieldNode.InnerText);
+                        break;
                     case "spawnInterval":
                         enemyWave.enemySpawnInterval = float.Parse(fieldNode.InnerText);
                         break;

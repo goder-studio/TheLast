@@ -12,7 +12,10 @@ public class PlayerPanel : BasePanel
     public Text txtCurrentShootMode;
     public Text txtSwitchShootMode;
     public Text txtHp;
+    public Text txtCountDown;
     public Image imgHp;
+
+    public Animation animCountDown;
 
     private bool changeHp = false;
     private Color targetColor = Constant.colorGreen;
@@ -25,6 +28,15 @@ public class PlayerPanel : BasePanel
 
     private void Update()
     {
+        if(GameManager.Instance.isPauseGame)
+        {
+            StopCountDownAnim();
+        }
+        else
+        {
+            RePlayCountDownAnim();
+        }
+
         if(changeHp)
         {
             txtHp.color = imgHp.color = Color.Lerp(imgHp.color, targetColor, Constant.colorSmoothSpeed);
@@ -38,6 +50,8 @@ public class PlayerPanel : BasePanel
 
     public void InitPanel(string weaponName,int totalAmmo,ShootMode shootmode,string spritePath)
     {
+        txtCountDown.color = Color.white;
+        txtCountDown.transform.localScale = Vector3.one;
         SetText(txtCurrentAmmo, weaponName);
         SetText(txtTotalAmmo, totalAmmo);
         SetText(txtCurrentShootMode, shootmode.ToString());
@@ -95,5 +109,61 @@ public class PlayerPanel : BasePanel
         tips += shootmode.ToString();
         SetText(txtSwitchShootMode, tips);
         txtSwitchShootMode.GetComponent<Animation>().Play();
+    }
+
+    public void ShowCountDown()
+    {
+        SetActive(txtCountDown, true);
+    }
+
+    public void HideCountDown()
+    {
+        txtCountDown.color = Color.white;
+        txtCountDown.transform.localScale = Vector3.one;
+        SetActive(txtCountDown, false);
+    }
+    
+    private void StopCountDownAnim()
+    {
+        AnimationState state = animCountDown["CountDown"];
+        state.speed = 0.0f;
+    }
+
+    private void RePlayCountDownAnim()
+    {
+        AnimationState state = animCountDown["CountDown"];
+        state.speed = 1.0f;
+    }
+
+    public void SetCountDown(int time)
+    {
+        string res = "";
+        int minute = time / 60;
+        int second = time % 60;
+        if(minute / 10 > 0)
+        {
+            res += minute.ToString();
+        }
+        else
+        {
+            res += "0" + minute.ToString();
+        }
+        res += ":";
+        if (second / 10 > 0)
+        {
+            res += second.ToString();
+        }
+        else
+        {
+            res += "0" + second.ToString();
+        }
+
+        SetText(txtCountDown,res);
+
+        if(time == 3)
+        {
+            animCountDown.clip = resSvc.LoadAnimationClip(PathDefine.AniCountDown);
+            animCountDown.Play();
+        }
     }
 }

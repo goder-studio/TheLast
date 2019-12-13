@@ -11,16 +11,14 @@ public class StartPanel : BasePanel
     public Button btn_Settings;
     public Button btn_Exit;
 
-    protected override void InitWindow()
+    private void Awake()
     {
-        base.InitWindow();
         btn_Start.onClick.AddListener(OnStartBtnClick);
         btn_Instruction.onClick.AddListener(OnInstructionBtnClick);
         btn_Settings.onClick.AddListener(OnSettingBtnClick);
         btn_Exit.onClick.AddListener(OnExitBtnClick);
-
-        
     }
+
 
     private void OnStartBtnClick()
     {

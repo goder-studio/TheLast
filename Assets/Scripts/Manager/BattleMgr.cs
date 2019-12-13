@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyWave
 {
+    public float delayTime;
     public int waveIndex;
     //敌人生成间隔
     public float enemySpawnInterval;
@@ -24,22 +25,29 @@ public class BattleMgr : MonoBehaviour
     private Dictionary<string, EntityEnemy> enemyDicts = new Dictionary<string, EntityEnemy>();
     private List<EnemyWave> enemyWaveList = new List<EnemyWave>();
 
+    private bool canSpawnEnemy;
+
     private EnemyWave curEnemyWave;
     private int curWaveIndex = 0;
     private int enemyCount = 0;
     private int totalKillCount = 0;
 
+    private float countDownTimer = 0;
     private float intervalTimer = 0;
 
     private void Update()
     {
+        //暂停状态下，跳过Update()的逻辑处理
+        if (GameManager.Instance.isPauseGame)
+            return;
+
         foreach (EntityEnemy entityEnemy in enemyDicts.Values)
         {
             entityEnemy.TickAllLogic();
         }
 
         Debug.Log("CurWaveIndex：" + curWaveIndex + " EnemyCount：" + enemyDicts.Count + " TotalKillCount：" + totalKillCount); ;
-        if(curWaveIndex < enemyWaveList.Count - 1)
+        if(curWaveIndex < enemyWaveList.Count  && canSpawnEnemy)
         {
             intervalTimer += Time.deltaTime;
             if (intervalTimer >= curEnemyWave.enemySpawnInterval && enemyCount < curEnemyWave.enemyCount)
@@ -51,11 +59,31 @@ public class BattleMgr : MonoBehaviour
             //一批怪物被消灭，更新数据
             if (enemyDicts.Count == 0)
             {
-                enemyCount = 0;
-                curWaveIndex++;
-                curEnemyWave = enemyWaveList[curWaveIndex];
+                if(curWaveIndex < enemyWaveList.Count - 1)
+                {
+                    enemyCount = 0;
+                    //当前波次加一
+                    curWaveIndex++;
+                    //更新当前波次信息
+                    curEnemyWave = enemyWaveList[curWaveIndex];
+                    //SpawnEnemy();
+                    canSpawnEnemy = false;
+                    intervalTimer = 0;
+                    //StartCoroutine(DelaySpawnEnemy(curEnemyWave.delayTime));
+                    DelayTimeSpawnEnemy(curEnemyWave.delayTime);
+                }
+            }
+        }
+
+        if(!canSpawnEnemy)
+        {
+            countDownTimer -= Time.deltaTime;
+            BattleSys.Instance.SetCountDown((int)countDownTimer + 1);
+            if(countDownTimer <= 0)
+            {
+                BattleSys.Instance.HideCountDown();
+                canSpawnEnemy = true;
                 SpawnEnemy();
-                intervalTimer = 0;
             }
         }
     }
@@ -69,9 +97,30 @@ public class BattleMgr : MonoBehaviour
 
         enemyWaveList = resSvc.GetAllEnemyWaveCfgs();
         curEnemyWave = enemyWaveList[curWaveIndex];
+        canSpawnEnemy = false;
 
-        //加载主角与怪物
+        //加载主角
         LoadPlayer();
+        //StartCoroutine(DelaySpawnEnemy(curEnemyWave.delayTime));
+        DelayTimeSpawnEnemy(curEnemyWave.delayTime);
+    }
+
+    private void DelayTimeSpawnEnemy(float delayTime)
+    {
+        countDownTimer = delayTime;
+        BattleSys.Instance.ShowCountDown();
+    }
+
+    private IEnumerator DelaySpawnEnemy(float delayTime)
+    {
+        //设置倒计时计时器
+        countDownTimer = delayTime;
+        //显示倒计时
+        BattleSys.Instance.ShowCountDown();
+        yield return new WaitForSeconds(delayTime);
+        //关闭倒计时
+        BattleSys.Instance.HideCountDown();
+        canSpawnEnemy = true;
         SpawnEnemy();
     }
 
@@ -181,6 +230,11 @@ public class BattleMgr : MonoBehaviour
     public Dictionary<string,EntityEnemy> GetEnemyDict()
     {
         return enemyDicts;
+    }
+
+    public FpsController GetFpsController()
+    {
+        return playerController;
     }
 
     #region Effect Operaion

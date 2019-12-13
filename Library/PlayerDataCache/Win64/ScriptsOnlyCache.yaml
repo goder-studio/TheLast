@@ -21,7 +21,9 @@ ScriptsOnlyBuild:
     - InstructionPanel
     - LoadingPanel
     - LookAtCamera
+    - OptionBtnInteraction
     - OptionPanel
+    - PausePanel
     - PlayerPanel
     - ResSvc
     - SettingPanel
@@ -50,7 +52,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/MainScene.unity:
+    Assets/Scenes/BattleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -116,6 +118,27 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
       Script: {instanceID: 0}
     Assets/Scenes/StartScene.unity:
     - Class: 1
@@ -235,13 +258,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10328}
     - Class: 114
-      Script: {instanceID: 10484}
+      Script: {instanceID: 10432}
     - Class: 114
-      Script: {instanceID: 10544}
+      Script: {instanceID: 10486}
     - Class: 114
-      Script: {instanceID: 10596}
+      Script: {instanceID: 10546}
     - Class: 114
-      Script: {instanceID: 10602}
+      Script: {instanceID: 10598}
+    - Class: 114
+      Script: {instanceID: 10604}
+    - Class: 114
+      Script: {instanceID: 90000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -299,7 +326,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: e933ee2e7014535e81a4b5306f75b3fe
+      Hash: 1935ad3f0ba3bb584272a202f5ff2e74
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerPanel
@@ -533,7 +560,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 6a75e86cec11b674613dcbcead8ae41a
+      Hash: 32004a0b8beac27c90ae70081c7177f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OptionPanel
@@ -779,7 +806,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: eb7da600d8ce5c39b18614f66dd549b2
+      Hash: bbc073dcd98c1c75145259becd7425ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1043,7 +1070,7 @@ ScriptsOnlyBuild:
     className: BasePanel
   - hash:
       serializedVersion: 2
-      Hash: 090a52e0046c7f37c05d1c0477264541
+      Hash: 9287ed252fb83aeb7c446c407ab50642
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BattleSys
@@ -1101,6 +1128,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AdapterDesignMode
+  - hash:
+      serializedVersion: 2
+      Hash: cfa362cceb0257304c87285ac9be99c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PausePanel
   - hash:
       serializedVersion: 2
       Hash: 6614e41d78e12bd9e803526aae409cd3
@@ -1185,8 +1218,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OptionBtnInteraction
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/MainScene.unity
+  - Assets/Scenes/BattleScene.unity
   playerPath: C:/Users/asus/Desktop/DontStopShooting/DontStopShooting.exe

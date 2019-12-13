@@ -21,6 +21,8 @@ public class BattleSys : SystemRoot
 
     public PlayerPanel playerPanel;
     public OptionPanel optionPanel;
+    public PausePanel pausePanel;
+
     private BattleMgr battleMgr;
 
     public override void InitSys()
@@ -31,14 +33,14 @@ public class BattleSys : SystemRoot
 
     public void EnterBattle()
     {
-        resSvc.AsyncLoadScene(Constant.SceneMainID, () =>
+        resSvc.AsyncLoadScene(Constant.SceneBattleID, () =>
         {
             battleMgr = gameObject.AddComponent<BattleMgr>();
             battleMgr.Init();
             playerPanel.SetWindowState(true);
             audioSvc.StopBgMusic();
             //GameManager.Instance.HideCursor();
-        });
+        },true);
     }
 
     public void ShakeCamera(float duration, float strength = 3, int vibrato = 10, float randomness = 90)
@@ -47,6 +49,14 @@ public class BattleSys : SystemRoot
     }
 
     #region UI Operation
+    public void HideAllPanels()
+    {
+        playerPanel.SetWindowState(false);
+        optionPanel.SetWindowState(false);
+        pausePanel.SetWindowState(false);
+    }
+
+    //PlayerPanel
     public void SetPlayerPanel(PlayerPanel playerPanel)
     {
         this.playerPanel = playerPanel;
@@ -95,23 +105,58 @@ public class BattleSys : SystemRoot
         playerPanel.ShowSwitchShootModeTips(shootmode);
     }
 
+    //OptionPanel
     public void ShowOptionPanel()
     {
-        if(optionPanel.gameObject.activeInHierarchy)
-        {
-            optionPanel.animation.clip = resSvc.LoadAnimationClip(PathDefine.AniOpenOptionPanel);
-            optionPanel.animation.Play();
-        }
-        else
-        {
-            optionPanel.SetWindowState(true);
-        }
+        GameManager.Instance.ShowCursor();
+        GameManager.Instance.isPauseGame = true;
+        optionPanel.SetWindowState(true);
+        optionPanel.anim.clip = resSvc.LoadAnimationClip(PathDefine.AniOpenOptionPanel);
+        optionPanel.anim.Play();
+        //if (optionPanel.gameObject.activeInHierarchy)
+        //{
+        //    optionPanel.anim.clip = resSvc.LoadAnimationClip(PathDefine.AniOpenOptionPanel);
+        //    optionPanel.anim.Play();
+        //}
+        //else
+        //{
+        //    optionPanel.SetWindowState(true);
+        //}
+
     }
 
     public void CloseOptionPanel()
     {
-        optionPanel.animation.clip = resSvc.LoadAnimationClip(PathDefine.AniCloseOptionPanel);
-        optionPanel.animation.Play();
+        GameManager.Instance.HideCursor();
+        GameManager.Instance.isPauseGame = false;
+        optionPanel.anim.clip = resSvc.LoadAnimationClip(PathDefine.AniCloseOptionPanel);
+        optionPanel.anim.Play();
+        //播放完隐藏panel
+        timerSvc.AddTimeTask((int tid) => {
+            optionPanel.SetWindowState(false);
+        },optionPanel.anim["CloseOptionPanel"].length * 1000);
+    }
+    //PausePanel 
+    public void ShowPausePanel()
+    {
+        GameManager.Instance.ShowCursor();
+        GameManager.Instance.isPauseGame = true;
+        pausePanel.SetWindowState(true);
+    }
+
+    public void ShowCountDown()
+    {
+        playerPanel.ShowCountDown();
+    }
+
+    public void HideCountDown()
+    {
+        playerPanel.HideCountDown();
+    }
+
+    public void SetCountDown(int time)
+    {
+        playerPanel.SetCountDown(time);
     }
     #endregion
 
@@ -161,5 +206,11 @@ public class BattleSys : SystemRoot
     {
         return battleMgr.GetTotalKillCount();
     }
+
+    public void SwitchWeapon(int index)
+    {
+        battleMgr.GetFpsController().SetCurWeapon(index);
+    }
+
     #endregion
 }

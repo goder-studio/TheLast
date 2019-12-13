@@ -10,10 +10,43 @@ public class OptionPanel : BasePanel
     public Button btn_Left;
     public Button btn_Right;
 
-    public Animation animation;
+    public Animation anim;
 
-    protected override void InitWindow()
+    private void Start()
     {
-        base.InitWindow();
+        btn_Top.onClick.AddListener(OnBtnTopClick);
+        btn_Bottom.onClick.AddListener(OnBtnBottomClick);
+        btn_Left.onClick.AddListener(OnBtnLeftClick);
+        btn_Right.onClick.AddListener(OnBtnRightClick);
+    }
+
+    private void OnBtnTopClick()
+    {
+        BattleSys.Instance.SwitchWeapon(0);
+        GameManager.Instance.HideCursor();
+        GameManager.Instance.isPauseGame = false;
+        SetWindowState(false);
+    }
+
+    private void OnBtnBottomClick()
+    {
+        BattleSys.Instance.SwitchWeapon(1);
+        GameManager.Instance.HideCursor();
+        GameManager.Instance.isPauseGame = false;
+        SetWindowState(false);
+    }
+
+    private void OnBtnLeftClick()
+    {
+        GameManager.Instance.HideCursor();
+        GameManager.Instance.isPauseGame = false;
+        SetWindowState(false);
+    }
+
+    private void OnBtnRightClick()
+    {
+        GameManager.Instance.HideCursor();
+        GameManager.Instance.isPauseGame = false;
+        SetWindowState(false);
     }
 }

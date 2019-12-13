@@ -52,6 +52,10 @@ public class AudioSvc : MonoBehaviour
             bgMusicAudio.loop = isLoop;
             bgMusicAudio.Play();
         }
+        else
+        {
+            bgMusicAudio.Play();
+        }
     }
 
     //设置背景音乐音量

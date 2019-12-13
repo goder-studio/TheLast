@@ -46,6 +46,9 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        //暂停状态下，跳过Update()的逻辑处理
+        if (GameManager.Instance.isPauseGame)
+            return;
         
         if (curDir != targetDir)
         {

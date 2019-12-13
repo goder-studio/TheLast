@@ -188,6 +188,8 @@ public class BaseWeapon : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (GameManager.Instance.isPauseGame)
+            return;
 
         AimUpdate();
         //If randomize muzzleflash is true, genereate random int values

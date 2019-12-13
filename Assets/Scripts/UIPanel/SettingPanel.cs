@@ -11,18 +11,13 @@ public class SettingPanel : BasePanel
     public Slider bgMusicVolumnSlider;
     public Slider effectSoundVolumnSlider;
 
-    protected override void InitWindow()
+    private void Awake()
     {
-        base.InitWindow();
-        btn_ControlBgMusic.GetComponent<Image>().sprite = 
-            audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
-        btn_ControlEffectSound.GetComponent<Image>().sprite =
-            audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
-
+        Debug.Log("Awake");
         btn_ControlBgMusic.onClick.AddListener(OnBtnControlBgMusicClick);
         btn_ControlEffectSound.onClick.AddListener(OnBtnControlEffectSoundClick);
 
-        bgMusicVolumnSlider.onValueChanged.AddListener((float value) => 
+        bgMusicVolumnSlider.onValueChanged.AddListener((float value) =>
         {
             audioSvc.SetBgMusicVolumn(value);
         });
@@ -30,6 +25,20 @@ public class SettingPanel : BasePanel
         {
             audioSvc.SetEffectSoundVolumn(value);
         });
+    }
+
+    private void Start()
+    {
+        Debug.Log("Start");
+    }
+
+    protected override void InitWindow()
+    {
+        base.InitWindow();
+        btn_ControlBgMusic.GetComponent<Image>().sprite = 
+            audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
+        btn_ControlEffectSound.GetComponent<Image>().sprite =
+            audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
     }
 
     private void OnBtnControlBgMusicClick()

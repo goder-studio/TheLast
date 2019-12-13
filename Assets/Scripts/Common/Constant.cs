@@ -39,5 +39,6 @@ public class Constant
 
     public const int SceneStartID = 0;
     public const int SceneMainID = 1;
+    public const int SceneBattleID = 2;
 
 }

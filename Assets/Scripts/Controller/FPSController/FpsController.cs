@@ -109,8 +109,7 @@ public class FpsController : MonoBehaviour
         _velocityX = new SmoothVelocity();
         _velocityZ = new SmoothVelocity();
         //隐藏光标
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        GameManager.Instance.HideCursor();
         ValidateRotationRestriction();
         SetCurWeapon(0);
     }
@@ -122,7 +121,7 @@ public class FpsController : MonoBehaviour
         return arms;
     }
 
-    private void SetCurWeapon(int index)
+    public void SetCurWeapon(int index)
     {
         for(int i = 0; i < weapons.Length; i++)
         {
@@ -198,6 +197,9 @@ public class FpsController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        if (GameManager.Instance.isPauseGame)
+            return;
+
         RotateCameraAndCharacter();
         MoveCharacter();
         _isGrounded = false;
@@ -205,10 +207,15 @@ public class FpsController : MonoBehaviour
 
     private void Update()
     {
-        Jump();
-        PlayFootStepSound();
-        SwitchWeapon();
+        if (!GameManager.Instance.isPauseGame)
+        {
+            Jump();
+            PlayFootStepSound();
+            SwitchWeapon();
+        }
+
         ControlOptionPanel();
+        ControlPausePanel();
     }
 
     private void ControlOptionPanel()
@@ -221,6 +228,14 @@ public class FpsController : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Tab))
         {
             BattleSys.Instance.CloseOptionPanel();
+        }
+    }
+
+    private void ControlPausePanel()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            BattleSys.Instance.ShowPausePanel();
         }
     }
 

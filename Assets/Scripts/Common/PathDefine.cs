@@ -22,6 +22,7 @@ public class PathDefine
 
     public const string AniOpenOptionPanel = "Animation/OpenOptionPanel";
     public const string AniCloseOptionPanel = "Animation/CloseOptionPanel";
+    public const string AniCountDown = "Animation/CountDown";
 
     public const string enemyWaveCfgs = "Assets/Resources/Cfgs/EnemyWave.xml";
 }
