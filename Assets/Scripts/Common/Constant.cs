@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Constant
 {
+    public static readonly Vector3 playerSpawnPosition = new Vector3(5.0f, 0.3f, 11.0f);
+
     public const float EnemyWalkSpeed = 2;
     public const float EnemyRunSpeed = 5;
     public const float smoothSpeed = 5;

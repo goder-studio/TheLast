@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4236075422643912}
   - component: {fileID: 33562540862349744}
   - component: {fileID: 23364607870953666}
-  - component: {fileID: -4013470869235620501}
+  - component: {fileID: -7762361468516804779}
   m_Layer: 0
   m_Name: SM_Veh_Plane_German_01
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4013470869235620501
+--- !u!64 &-7762361468516804779
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

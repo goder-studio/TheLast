@@ -20,7 +20,15 @@ public class StateHit : IState
         //播放受击音效TODO 
 
         //受击停止移动
-        entity.SetDir(Vector3.zero);
+        if (entity.ControllerMode == EnemyControllerMode.ModeCharacterController)
+        {
+            entity.SetDir(Vector3.zero);
+        }
+        else if (entity.ControllerMode == EnemyControllerMode.ModeNavMeshAgent)
+        {
+            entity.StopInNav();
+        }
+
         entity.SetAction(Constant.ActionHit);
         TimerSvc.Instance.AddTimeTask((int tid) =>
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4632590635564850}
   - component: {fileID: 33460983909541642}
   - component: {fileID: 23096357788103338}
-  - component: {fileID: 6862710801696046946}
+  - component: {fileID: 8623631226076430513}
   m_Layer: 0
   m_Name: SM_Prop_Sign_07
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6862710801696046946
+--- !u!64 &8623631226076430513
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 928803f307c9f4445aa43c3401730526, type: 3}

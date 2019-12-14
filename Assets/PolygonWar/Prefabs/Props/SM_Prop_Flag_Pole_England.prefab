@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4932773596071352}
   - component: {fileID: 33316536430196074}
   - component: {fileID: 23194816145219120}
-  - component: {fileID: 7366020847717111579}
+  - component: {fileID: 5694042511914395306}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Pole_England
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7366020847717111579
+--- !u!64 &5694042511914395306
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: e58ba37b5dcd6cd498467bf6b2b997a2, type: 3}

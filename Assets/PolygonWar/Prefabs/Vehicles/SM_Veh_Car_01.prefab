@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 4576384964615626}
   - component: {fileID: 33687264267304616}
   - component: {fileID: 23922005993227370}
-  - component: {fileID: 6094014426330588870}
+  - component: {fileID: -6341227197200806419}
   m_Layer: 0
   m_Name: SM_Veh_Car_01
   m_TagString: Untagged
@@ -316,7 +316,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6094014426330588870
+--- !u!64 &-6341227197200806419
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

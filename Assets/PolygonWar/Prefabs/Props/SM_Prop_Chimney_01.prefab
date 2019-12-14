@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 474096}
   - component: {fileID: 3369598}
   - component: {fileID: 2341902}
-  - component: {fileID: 6073127348394194731}
+  - component: {fileID: 5169377711696293168}
   m_Layer: 0
   m_Name: SM_Prop_Chimney_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6073127348394194731
+--- !u!64 &5169377711696293168
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: cbe5fd20be4272346b2219adff5cc3e9, type: 3}

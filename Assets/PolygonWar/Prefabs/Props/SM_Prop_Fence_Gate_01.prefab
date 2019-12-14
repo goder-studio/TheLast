@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 409972}
   - component: {fileID: 3330998}
   - component: {fileID: 2335920}
-  - component: {fileID: 9005819989132816309}
+  - component: {fileID: 567914164742077924}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Gate_01
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &9005819989132816309
+--- !u!64 &567914164742077924
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 6b9dd49cb8caa634dba84cfff042e016, type: 3}
 --- !u!1 &146338

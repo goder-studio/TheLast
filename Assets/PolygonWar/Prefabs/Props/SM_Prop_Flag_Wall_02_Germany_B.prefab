@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4606659718565310}
   - component: {fileID: 33417335408812904}
   - component: {fileID: 23215137962929242}
-  - component: {fileID: -4821191499950534654}
+  - component: {fileID: -1428584878068592857}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Wall_02_Germany_B
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4821191499950534654
+--- !u!64 &-1428584878068592857
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 223b2469d7335754fac7ff968836e0d8, type: 3}

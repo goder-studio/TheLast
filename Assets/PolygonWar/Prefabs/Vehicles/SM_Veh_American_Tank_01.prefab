@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 4480466677387892}
   - component: {fileID: 33846510846619896}
   - component: {fileID: 23256611609516550}
-  - component: {fileID: -2757941501435518126}
+  - component: {fileID: 8201993033448242758}
   m_Layer: 0
   m_Name: SM_Veh_American_Tank_01
   m_TagString: Untagged
@@ -1027,7 +1027,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-2757941501435518126
+--- !u!64 &8201993033448242758
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

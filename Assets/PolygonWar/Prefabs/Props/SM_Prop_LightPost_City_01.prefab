@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4842913706431176}
   - component: {fileID: 33116643081720018}
   - component: {fileID: 23586403686189202}
-  - component: {fileID: 4642423673329913275}
+  - component: {fileID: 7724677237351275294}
   m_Layer: 0
   m_Name: SM_Prop_LightPost_City_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4642423673329913275
+--- !u!64 &7724677237351275294
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 203adfe99400cee4fbb829acd0bb4665, type: 3}

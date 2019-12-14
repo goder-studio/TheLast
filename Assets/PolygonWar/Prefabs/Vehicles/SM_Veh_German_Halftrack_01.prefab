@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 4924320973631184}
   - component: {fileID: 33891220326149190}
   - component: {fileID: 23441861512383650}
-  - component: {fileID: 7763365130481775131}
+  - component: {fileID: -3655643998283301225}
   m_Layer: 0
   m_Name: SM_Veh_German_Halftrack_01
   m_TagString: Untagged
@@ -1641,7 +1641,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7763365130481775131
+--- !u!64 &-3655643998283301225
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

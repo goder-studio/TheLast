@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4681500829981850}
   - component: {fileID: 33330025995232880}
   - component: {fileID: 23534527224220346}
-  - component: {fileID: -4749337979534130617}
+  - component: {fileID: -8820986669168970811}
   m_Layer: 0
   m_Name: SM_Veh_American_Tank_Destroyed_01
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4749337979534130617
+--- !u!64 &-8820986669168970811
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

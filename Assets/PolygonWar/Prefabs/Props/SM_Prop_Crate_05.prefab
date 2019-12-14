@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4126294169190538}
   - component: {fileID: 33894332101234226}
   - component: {fileID: 23142707275949896}
-  - component: {fileID: 2220354167338528262}
+  - component: {fileID: 5794963459707988472}
   m_Layer: 0
   m_Name: SM_Prop_Crate_05
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2220354167338528262
+--- !u!64 &5794963459707988472
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,6 +167,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: ce3d8b61be331d44e8c779ab20855f45, type: 3}

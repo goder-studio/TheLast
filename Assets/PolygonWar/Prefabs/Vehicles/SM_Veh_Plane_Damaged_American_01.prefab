@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4178126270493368}
   - component: {fileID: 33187498321456438}
   - component: {fileID: 23663927761996032}
-  - component: {fileID: -7893176736199983264}
+  - component: {fileID: -5935909509464815510}
   m_Layer: 0
   m_Name: SM_Veh_Plane_Damaged_American_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-7893176736199983264
+--- !u!64 &-5935909509464815510
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

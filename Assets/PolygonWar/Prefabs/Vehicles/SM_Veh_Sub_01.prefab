@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 33300569372346260}
   - component: {fileID: 23862868016119564}
   - component: {fileID: 95591488196550298}
-  - component: {fileID: 4117853893190995444}
+  - component: {fileID: -5260828962086315889}
   m_Layer: 0
   m_Name: SM_Veh_Sub_01
   m_TagString: Untagged
@@ -254,7 +254,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &4117853893190995444
+--- !u!64 &-5260828962086315889
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

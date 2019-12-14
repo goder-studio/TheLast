@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4492420489225980}
   - component: {fileID: 33569255169190492}
   - component: {fileID: 23644977570507926}
-  - component: {fileID: -2337133437209660093}
+  - component: {fileID: -4072471810552676926}
   m_Layer: 0
   m_Name: SM_Prop_Radio_Box_03
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-2337133437209660093
+--- !u!64 &-4072471810552676926
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 70791712bd8171549a0cd3589f9dea42, type: 3}

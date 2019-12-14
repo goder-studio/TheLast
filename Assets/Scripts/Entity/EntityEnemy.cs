@@ -7,7 +7,28 @@ public class EntityEnemy : EntityBase
     public StateMgr stateMgr = null;
     public BattleMgr battleMgr = null;
 
-    public EnemyController controller;
+    private EnemyController controller;
+
+    //敌人控制模式（CharacterController/NavMeshAgent）
+    private EnemyControllerMode enemyControllerMode;
+    public EnemyControllerMode ControllerMode
+    {
+        get { return enemyControllerMode; }
+        set
+        {
+            enemyControllerMode = value;
+            if (enemyControllerMode == EnemyControllerMode.ModeNavMeshAgent)
+            {
+                controller.controller.enabled = false;
+                controller.agent.enabled = true;
+            }
+            else if (enemyControllerMode == EnemyControllerMode.ModeCharacterController)
+            {
+                controller.controller.enabled = true;
+                controller.agent.enabled = false;
+            }
+        }
+    }
 
     public AniState aniState = AniState.None;
 
@@ -51,7 +72,15 @@ public class EntityEnemy : EntityBase
                 if(!InAtkRange())
                 {
                     //没有在范围内，朝目标方向移动
-                    SetDir(dir);
+                    if(ControllerMode == EnemyControllerMode.ModeNavMeshAgent)
+                    {
+                        StartInNav();
+                    }
+                    else if(ControllerMode == EnemyControllerMode.ModeCharacterController)
+                    {
+                        SetDir(dir);
+                    }
+
                     if (Hp <= Props.hp * 0.3f) 
                     {
                         //敌人变红
@@ -66,7 +95,15 @@ public class EntityEnemy : EntityBase
                 else
                 {
                     //在范围内，停止移动并攻击
-                    SetDir(Vector3.zero);
+                    if (ControllerMode == EnemyControllerMode.ModeNavMeshAgent)
+                    {
+                        StopInNav();
+                    }
+                    else if (ControllerMode == EnemyControllerMode.ModeCharacterController)
+                    {
+                        SetDir(Vector3.zero);
+                    }
+                 
                     atkCounter += checkCounter;
                     if(atkCounter >= atkTime)
                     {
@@ -167,6 +204,12 @@ public class EntityEnemy : EntityBase
         }
     }
 
+    #region Set Operation
+    public void SetControllerMode(EnemyControllerMode mode)
+    {
+        ControllerMode = mode;
+    }
+
     public void SetAtkProps(float atkDis,float atkAngle)
     {
         this.atkDistance = atkDis;
@@ -177,6 +220,11 @@ public class EntityEnemy : EntityBase
     {
         controller = ctr;
         controller.SetEntity(this);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        controller.SetSpeed(speed);
     }
 
     public void SetBlend(float blend)
@@ -192,14 +240,6 @@ public class EntityEnemy : EntityBase
         if(controller != null)
         {
             controller.SetAction(action);
-        }
-    }
-
-    public void Destroy()
-    {
-        if(controller != null)
-        {
-            controller.CanDestroy = true;
         }
     }
 
@@ -219,6 +259,35 @@ public class EntityEnemy : EntityBase
         }
     }
 
+    public override void SetActive(bool active)
+    {
+        if (controller != null)
+        {
+            controller.gameObject.SetActive(active);
+        }
+    }
+
+    public void Destroy()
+    {
+        if (controller != null)
+        {
+            controller.CanDestroy = true;
+        }
+    }
+
+    //停止寻路
+    public void StopInNav()
+    {
+        controller.agent.isStopped = true;
+    }
+
+    public void StartInNav()
+    {
+        controller.agent.isStopped = false;
+        controller.agent.SetDestination(BattleSys.Instance.GetPlayer().controller.transform.position);
+    }
+    #endregion
+
     public override Vector3 GetPos()
     {
         return controller.transform.position;
@@ -229,13 +298,7 @@ public class EntityEnemy : EntityBase
         return controller.transform;
     }
 
-    public override void SetActive(bool active)
-    {
-        if(controller != null)
-        {
-            controller.gameObject.SetActive(active);
-        }
-    }
+
 
     /// <summary>
     /// 血量低时变得狂暴

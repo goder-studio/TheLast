@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 423312}
   - component: {fileID: 3364276}
   - component: {fileID: 2325530}
-  - component: {fileID: -8049128969385477975}
+  - component: {fileID: 2943288311577771048}
   m_Layer: 0
   m_Name: SM_Prop_Wire_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-8049128969385477975
+--- !u!64 &2943288311577771048
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: fc47a013cf964ef41bdbf24a19bf6329, type: 3}

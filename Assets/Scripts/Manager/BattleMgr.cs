@@ -19,6 +19,8 @@ public class BattleMgr : MonoBehaviour
     private StateMgr stateMgr;
     private ResSvc resSvc;
 
+    public Camera mipmapCamera;
+
     private FpsController playerController;
     public EntityPlayer entityPlayer;
 
@@ -41,12 +43,17 @@ public class BattleMgr : MonoBehaviour
         if (GameManager.Instance.isPauseGame)
             return;
 
+        if(mipmapCamera != null)
+        {
+            mipmapCamera.transform.position = playerController.transform.position + new Vector3(0, 30, 0);
+        }
+
         foreach (EntityEnemy entityEnemy in enemyDicts.Values)
         {
             entityEnemy.TickAllLogic();
         }
 
-        Debug.Log("CurWaveIndex：" + curWaveIndex + " EnemyCount：" + enemyDicts.Count + " TotalKillCount：" + totalKillCount); ;
+        //Debug.Log("CurWaveIndex：" + curWaveIndex + " EnemyCount：" + enemyDicts.Count + " TotalKillCount：" + totalKillCount); ;
         if(curWaveIndex < enemyWaveList.Count  && canSpawnEnemy)
         {
             intervalTimer += Time.deltaTime;
@@ -99,6 +106,7 @@ public class BattleMgr : MonoBehaviour
         curEnemyWave = enemyWaveList[curWaveIndex];
         canSpawnEnemy = false;
 
+        mipmapCamera = GameObject.FindObjectOfType<Camera>();
         //加载主角
         LoadPlayer();
         //StartCoroutine(DelaySpawnEnemy(curEnemyWave.delayTime));
@@ -126,11 +134,9 @@ public class BattleMgr : MonoBehaviour
 
     private void LoadPlayer()
     {
-        GameObject player = resSvc.LoadPrefab(PathDefine.PlayerPrefab);
+        GameObject player = resSvc.LoadPrefab(PathDefine.PlayerPrefab,Constant.playerSpawnPosition,Quaternion.identity);
         if(player != null)
         {
-            player.transform.position = new Vector3(0, 0.3f, 0);
-            player.transform.rotation = Quaternion.identity;
             player.transform.localScale = Vector3.one;
 
             playerController = player.GetComponent<FpsController>();
@@ -155,11 +161,9 @@ public class BattleMgr : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject enemy = resSvc.LoadPrefab(PathDefine.EnemyPrefab);
+        GameObject enemy = resSvc.LoadPrefab(PathDefine.EnemyPrefab, new Vector3(5.0f, -1.0f, 11.0f),Quaternion.identity);
         if(enemy != null)
         {
-            enemy.transform.position = new Vector3(0,-1.0f,0);
-            enemy.transform.rotation = Quaternion.identity;
             enemy.transform.localScale = Vector3.one;
             enemy.name = "enemy" + enemyCount;
             enemyCount++;
@@ -176,6 +180,7 @@ public class BattleMgr : MonoBehaviour
             entityEnemy.SetAtkProps(Constant.EnemyAttackDistance, Constant.EnemyAttackAngle);
             entityEnemy.SetController(enemy.GetComponent<EnemyController>());
 
+            entityEnemy.SetControllerMode(EnemyControllerMode.ModeNavMeshAgent);
             BattleProps battleProps = new BattleProps
             {
                 hp = curEnemyWave.enemyBattleProps.hp,
@@ -185,10 +190,7 @@ public class BattleMgr : MonoBehaviour
             entityEnemy.Born();
             //加入字典
             enemyDicts.Add(enemy.name, entityEnemy);
-
         }
-        
-
     }
 
     /// <summary>

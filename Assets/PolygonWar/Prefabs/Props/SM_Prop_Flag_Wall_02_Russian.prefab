@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4667914617309964}
   - component: {fileID: 33544279672124482}
   - component: {fileID: 23777467515976190}
-  - component: {fileID: -1010827529308621724}
+  - component: {fileID: -6230438648287389314}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Wall_02_Russian
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1010827529308621724
+--- !u!64 &-6230438648287389314
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f7c7b6249258a9e43880f3ecc95e1ccb, type: 3}

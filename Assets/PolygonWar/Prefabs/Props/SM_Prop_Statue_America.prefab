@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4603212230508598}
   - component: {fileID: 33169223815169640}
   - component: {fileID: 23887067253882806}
-  - component: {fileID: -995750190447436951}
+  - component: {fileID: 7176656196172152476}
   m_Layer: 0
   m_Name: SM_Prop_Statue_America
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-995750190447436951
+--- !u!64 &7176656196172152476
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300002, guid: 30159e74a4b87fe4281e23d663d800d9, type: 3}

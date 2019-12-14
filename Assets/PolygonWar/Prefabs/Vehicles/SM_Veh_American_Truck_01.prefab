@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 4348092301464328}
   - component: {fileID: 33408676304260140}
   - component: {fileID: 23109453926760278}
-  - component: {fileID: -1029239296196200974}
+  - component: {fileID: 1807002337035599876}
   m_Layer: 0
   m_Name: SM_Veh_American_Truck_01
   m_TagString: Untagged
@@ -1093,7 +1093,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1029239296196200974
+--- !u!64 &1807002337035599876
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

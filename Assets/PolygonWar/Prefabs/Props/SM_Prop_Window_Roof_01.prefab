@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 458036}
   - component: {fileID: 3390204}
   - component: {fileID: 2309594}
-  - component: {fileID: 8788468900511839246}
+  - component: {fileID: -3097890749766708878}
   m_Layer: 0
   m_Name: SM_Prop_Window_Roof_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8788468900511839246
+--- !u!64 &-3097890749766708878
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9ad7bfbd6da0f9e48b5e3954eaa6a340, type: 3}

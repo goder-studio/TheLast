@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 432956}
   - component: {fileID: 3310628}
   - component: {fileID: 2342084}
-  - component: {fileID: -1268935681847055839}
+  - component: {fileID: -6208553508482207651}
   m_Layer: 0
   m_Name: SM_Prop_Stone_Path_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-1268935681847055839
+--- !u!64 &-6208553508482207651
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1cc1a19ce1eeb2b49bb887c01251fdd6, type: 3}

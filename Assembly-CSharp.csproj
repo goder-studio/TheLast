@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\UIPanel\BasePanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\InstructionPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\LoadingPanel.cs" />
+    <Compile Include="Assets\Scripts\UIPanel\MipMapPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\OptionPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\PausePanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\PlayerPanel.cs" />

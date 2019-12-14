@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4526872983560252}
   - component: {fileID: 33048492154390006}
   - component: {fileID: 23100585283333578}
-  - component: {fileID: -4114707480658454712}
+  - component: {fileID: -5786918265283413345}
   m_Layer: 0
   m_Name: SM_Prop_AlarmPole_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-4114707480658454712
+--- !u!64 &-5786918265283413345
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9536ff07f6890a249b2c8e3bfe513ca5, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4680962171544386}
   - component: {fileID: 33234636828316010}
   - component: {fileID: 23628000004056284}
-  - component: {fileID: 3814672065182324878}
+  - component: {fileID: 4516638189366679865}
   m_Layer: 0
   m_Name: SM_Prop_Piano_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3814672065182324878
+--- !u!64 &4516638189366679865
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 78ac74beda95ba54aa1fdd35d2abeadd, type: 3}

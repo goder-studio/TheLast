@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 33481202953287608}
   - component: {fileID: 23967233072844966}
   - component: {fileID: 95502782635663938}
-  - component: {fileID: -3110244985255875682}
+  - component: {fileID: 1472193685907000187}
   m_Layer: 0
   m_Name: SM_Veh_Boat_Large_01
   m_TagString: Untagged
@@ -1035,7 +1035,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &-3110244985255875682
+--- !u!64 &1472193685907000187
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

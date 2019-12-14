@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4647260763374850}
   - component: {fileID: 33939985626574752}
   - component: {fileID: 23440599827326810}
-  - component: {fileID: 160275157876144444}
+  - component: {fileID: -3425876186079968577}
   m_Layer: 0
   m_Name: SM_Prop_GrandfatherClock_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &160275157876144444
+--- !u!64 &-3425876186079968577
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 5c7bea03d0c9dd2409a691020ff922f5, type: 3}

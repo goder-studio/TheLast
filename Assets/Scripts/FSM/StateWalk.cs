@@ -18,6 +18,7 @@ public class StateWalk : IState
     public void OnProcess(EntityEnemy entity)
     {
         entity.SetBlend(Constant.BlendWalk);
+        entity.SetSpeed(Constant.EnemyWalkSpeed);
         Debug.Log("Process Move");
     }
 

@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
+public enum EnemyControllerMode
+{
+    ModeCharacterController,
+    ModeNavMeshAgent,
+}
 
 public class EnemyController : MonoBehaviour
 {
     public Animator animator;
     public CharacterController controller;
+    public NavMeshAgent agent;
 
     private bool isMove;
     private bool canDestroy;
@@ -15,6 +23,19 @@ public class EnemyController : MonoBehaviour
         set { canDestroy = value; }
     }
     private EntityEnemy entity;
+
+    private float speed;
+    public float Speed
+    {
+        set
+        {
+            speed = value;
+            if(entity.ControllerMode == EnemyControllerMode.ModeNavMeshAgent)
+            {
+                agent.speed = value;
+            }
+        }
+    }
 
     private Vector3 curDir;
     private Vector3 targetDir;
@@ -32,14 +53,6 @@ public class EnemyController : MonoBehaviour
             {
                 isMove = true;
                 targetDir = value;
-                //if (entity.Hp <= 30)
-                //{
-                //    entity.SetBlend(Constant.BlendRun);
-                //}
-                //else
-                //{
-                //    entity.SetBlend(Constant.BlendWalk);
-                //}
             }
         }
     }
@@ -49,16 +62,18 @@ public class EnemyController : MonoBehaviour
         //暂停状态下，跳过Update()的逻辑处理
         if (GameManager.Instance.isPauseGame)
             return;
-        
-        if (curDir != targetDir)
-        {
-            //Debug.Log("curDir:" + curDir + "targetDir:" + targetDir);
-            UpdateDir();
-        }
 
-        if(isMove)
+        if(entity.ControllerMode == EnemyControllerMode.ModeCharacterController)
         {
-            SetMove();
+            if (curDir != targetDir)
+            {
+                UpdateDir();
+            }
+
+            if (isMove)
+            {
+                SetMove();
+            }
         }
 
         if(canDestroy)
@@ -73,20 +88,25 @@ public class EnemyController : MonoBehaviour
     public void SetMove()
     {
         //controller.Move(transform.forward * Time.deltaTime * Constant.EnemyMoveSpeed);
-        if(entity.aniState == AniState.Walk)
-        {
-            controller.SimpleMove(transform.forward * Constant.EnemyWalkSpeed);
-        }
-        else if(entity.aniState == AniState.Run)
-        {
-            controller.SimpleMove(transform.forward * Constant.EnemyRunSpeed);
-        }
-
+        //if(entity.aniState == AniState.Walk)
+        //{
+        //    controller.SimpleMove(transform.forward * Constant.EnemyWalkSpeed);
+        //}
+        //else if(entity.aniState == AniState.Run)
+        //{
+        //    controller.SimpleMove(transform.forward * Constant.EnemyRunSpeed);
+        //}
+        controller.SimpleMove(transform.forward * speed);
     }
 
     public void SetEntity(EntityEnemy e)
     {
         entity = e;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.Speed = speed;
     }
 
     public void SetBlend(float blend)

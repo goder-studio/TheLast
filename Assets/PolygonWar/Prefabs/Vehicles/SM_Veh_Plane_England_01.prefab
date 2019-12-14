@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 33580878257106136}
   - component: {fileID: 23837835134666846}
   - component: {fileID: 95657737046957882}
-  - component: {fileID: 1312465443810167228}
+  - component: {fileID: 3192039940846031711}
   m_Layer: 0
   m_Name: SM_Veh_Plane_England_01
   m_TagString: Untagged
@@ -186,7 +186,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &1312465443810167228
+--- !u!64 &3192039940846031711
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4212140864127510}
   - component: {fileID: 33953387536785634}
   - component: {fileID: 23057106801728750}
-  - component: {fileID: 3404628516808412355}
+  - component: {fileID: -2497292418072770712}
   m_Layer: 0
   m_Name: SM_Prop_DinningTable_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3404628516808412355
+--- !u!64 &-2497292418072770712
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: ee1e032acd8430248a78864ed35b70e7, type: 3}

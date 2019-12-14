@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 4450927904410622}
   - component: {fileID: 33441852685024892}
   - component: {fileID: 23926864293675750}
-  - component: {fileID: -9054061071608581644}
+  - component: {fileID: -4078694121765441349}
   m_Layer: 0
   m_Name: SM_Veh_German_Tank_01
   m_TagString: Untagged
@@ -871,7 +871,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-9054061071608581644
+--- !u!64 &-4078694121765441349
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33049945219349718}
   - component: {fileID: 23792171689811758}
   - component: {fileID: 95735831515315900}
-  - component: {fileID: -7489395717264920980}
+  - component: {fileID: 4673265147985264506}
   m_Layer: 0
   m_Name: SM_Prop_Parachute_Tree
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &-7489395717264920980
+--- !u!64 &4673265147985264506
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9f81c756d364bf9489a2f4bac60217a2, type: 3}

@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 4223141239529196}
   - component: {fileID: 33293898904253648}
   - component: {fileID: 23082390321444404}
-  - component: {fileID: 7808311560389999880}
+  - component: {fileID: -5044068498376870182}
   m_Layer: 0
   m_Name: SM_Veh_Russian_Tank_01
   m_TagString: Untagged
@@ -1173,7 +1173,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7808311560389999880
+--- !u!64 &-5044068498376870182
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4028859076852902}
   - component: {fileID: 33889784112170958}
   - component: {fileID: 23896568272800944}
-  - component: {fileID: 332987104744581918}
+  - component: {fileID: 2560557139893935233}
   m_Layer: 0
   m_Name: SM_Prop_Door_04
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &332987104744581918
+--- !u!64 &2560557139893935233
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a3d5a37cb0e59704f845b2b321474b65, type: 3}

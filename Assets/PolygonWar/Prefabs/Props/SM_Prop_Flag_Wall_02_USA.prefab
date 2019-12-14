@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4584605819773966}
   - component: {fileID: 33856896766690380}
   - component: {fileID: 23345395360221748}
-  - component: {fileID: 7529346022561961388}
+  - component: {fileID: -391100081688579807}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Wall_02_USA
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7529346022561961388
+--- !u!64 &-391100081688579807
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: aea2ea304566b074a81add0c5a37398c, type: 3}

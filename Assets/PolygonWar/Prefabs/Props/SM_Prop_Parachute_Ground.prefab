@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33112456165840276}
   - component: {fileID: 23053804629858820}
   - component: {fileID: 95889162613845586}
-  - component: {fileID: 1467135421068825717}
+  - component: {fileID: -5112314033025917044}
   m_Layer: 0
   m_Name: SM_Prop_Parachute_Ground
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &1467135421068825717
+--- !u!64 &-5112314033025917044
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 01a3e3a9fd503314bab6bd1826b496d4, type: 3}

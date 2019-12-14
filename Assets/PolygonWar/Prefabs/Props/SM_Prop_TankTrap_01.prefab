@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4963475927628292}
   - component: {fileID: 33320225811237824}
   - component: {fileID: 23562877830995470}
-  - component: {fileID: 5581930191323637428}
+  - component: {fileID: 2460725199532503470}
   m_Layer: 0
   m_Name: SM_Prop_TankTrap_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5581930191323637428
+--- !u!64 &2460725199532503470
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: ab6cd6d63ca856a489f67d2730075ca3, type: 3}

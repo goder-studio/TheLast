@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4730823554984200}
   - component: {fileID: 33331357725423484}
   - component: {fileID: 23427512237761708}
-  - component: {fileID: -6911812675671507418}
+  - component: {fileID: 3705153589145398623}
   m_Layer: 0
   m_Name: SM_Prop_Typewriter_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-6911812675671507418
+--- !u!64 &3705153589145398623
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: b7b8421e64cdfeb49ac00b6feb278614, type: 3}

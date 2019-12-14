@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4908402453421378}
   - component: {fileID: 33735642421206932}
   - component: {fileID: 23814892942195244}
-  - component: {fileID: 6771988676539042013}
+  - component: {fileID: -4897900001217604556}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Wall_02_France
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6771988676539042013
+--- !u!64 &-4897900001217604556
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f840ec796c535d7448bfeab439bd9e85, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4364722652150232}
   - component: {fileID: 33583824866000436}
   - component: {fileID: 23008882447677502}
-  - component: {fileID: -5154300344068102171}
+  - component: {fileID: 371536506677483333}
   m_Layer: 0
   m_Name: SM_Prop_Fence_Wire_Post_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-5154300344068102171
+--- !u!64 &371536506677483333
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 4f80d98ced4f5014a950bd66313ab913, type: 3}

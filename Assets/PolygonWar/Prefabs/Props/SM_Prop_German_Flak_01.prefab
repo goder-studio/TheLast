@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4226187238751334}
   - component: {fileID: 33272869003430176}
   - component: {fileID: 23842399598260500}
-  - component: {fileID: 3765956363770476551}
+  - component: {fileID: -7264652954552128281}
   m_Layer: 0
   m_Name: SM_Prop_German_Flak_01
   m_TagString: Untagged
@@ -158,7 +158,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &3765956363770476551
+--- !u!64 &-7264652954552128281
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1eafc81685d57bc4fba5800c616b9e5f, type: 3}
 --- !u!1 &1577503810992424

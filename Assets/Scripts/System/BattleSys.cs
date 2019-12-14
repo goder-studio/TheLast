@@ -22,6 +22,7 @@ public class BattleSys : SystemRoot
     public PlayerPanel playerPanel;
     public OptionPanel optionPanel;
     public PausePanel pausePanel;
+    public MipMapPanel mipmapPanel;
 
     private BattleMgr battleMgr;
 
@@ -38,6 +39,7 @@ public class BattleSys : SystemRoot
             battleMgr = gameObject.AddComponent<BattleMgr>();
             battleMgr.Init();
             playerPanel.SetWindowState(true);
+            mipmapPanel.SetWindowState(true);
             audioSvc.StopBgMusic();
             //GameManager.Instance.HideCursor();
         },true);
@@ -54,6 +56,7 @@ public class BattleSys : SystemRoot
         playerPanel.SetWindowState(false);
         optionPanel.SetWindowState(false);
         pausePanel.SetWindowState(false);
+        mipmapPanel.SetWindowState(false);
     }
 
     //PlayerPanel
@@ -157,6 +160,17 @@ public class BattleSys : SystemRoot
     public void SetCountDown(int time)
     {
         playerPanel.SetCountDown(time);
+    }
+
+    //MipMapPanel
+    public void ShowMipmapPanel()
+    {
+        mipmapPanel.SetWindowState(true);
+    }
+
+    public void HideMipmapPanel()
+    {
+        mipmapPanel.SetWindowState(false);
     }
     #endregion
 

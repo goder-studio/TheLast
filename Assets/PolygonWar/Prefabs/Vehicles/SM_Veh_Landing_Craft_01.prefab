@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4716430638693146}
   - component: {fileID: 33767218595066732}
   - component: {fileID: 23896213175842528}
-  - component: {fileID: 6822404305673156162}
+  - component: {fileID: -4478384718764366207}
   m_Layer: 0
   m_Name: SM_Veh_Landing_Craft_01
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6822404305673156162
+--- !u!64 &-4478384718764366207
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

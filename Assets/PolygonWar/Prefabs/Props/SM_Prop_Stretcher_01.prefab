@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4637031278862188}
   - component: {fileID: 33884849785207190}
   - component: {fileID: 23897079144994036}
-  - component: {fileID: 8462229264087739723}
+  - component: {fileID: -681792386149955088}
   m_Layer: 0
   m_Name: SM_Prop_Stretcher_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8462229264087739723
+--- !u!64 &-681792386149955088
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 32cfd5813d0ca374ab56447ae790edd6, type: 3}

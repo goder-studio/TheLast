@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 2569658627081299424}
   - component: {fileID: 2569658627081299425}
   - component: {fileID: 971506168171997797}
+  - component: {fileID: 1628616599}
   m_Layer: 0
   m_Name: MaleZombie
   m_TagString: Enemy
@@ -1129,7 +1130,7 @@ CharacterController:
   m_Height: 2.03
   m_Radius: 0.24
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0.04, y: 0.95, z: 0}
@@ -1147,6 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 601782398568358798}
   controller: {fileID: 2569658627081299424}
+  agent: {fileID: 1628616599}
 --- !u!136 &971506168171997797
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1161,6 +1163,28 @@ CapsuleCollider:
   m_Height: 2.03
   m_Direction: 1
   m_Center: {x: 0.04, y: 0.95, z: 0}
+--- !u!195 &1628616599
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803081627256863975}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.24
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 240
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5888254361367404416
 GameObject:
   m_ObjectHideFlags: 0

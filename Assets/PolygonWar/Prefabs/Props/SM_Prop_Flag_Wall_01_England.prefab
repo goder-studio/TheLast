@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000725862975930}
   - component: {fileID: 33663804154993564}
   - component: {fileID: 23832964812134388}
-  - component: {fileID: -3012824163107645996}
+  - component: {fileID: -8927881087862356056}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Wall_01_England
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-3012824163107645996
+--- !u!64 &-8927881087862356056
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 7fb1b1c110b4ba64cad69dd97b68bb92, type: 3}

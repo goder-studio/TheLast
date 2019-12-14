@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4205082495810676}
   - component: {fileID: 33345856901895034}
   - component: {fileID: 23223371920594774}
-  - component: {fileID: 7204260089257168603}
+  - component: {fileID: 6882124713688692590}
   m_Layer: 0
   m_Name: SM_Veh_American_Truck_Destroyed_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7204260089257168603
+--- !u!64 &6882124713688692590
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

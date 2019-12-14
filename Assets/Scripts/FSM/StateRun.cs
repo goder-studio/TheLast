@@ -18,6 +18,7 @@ public class StateRun : IState
     public void OnProcess(EntityEnemy entity)
     {
         entity.SetBlend(Constant.BlendRun);
+        entity.SetSpeed(Constant.EnemyRunSpeed);
         Debug.Log("Process Run");
     }
 }

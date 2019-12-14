@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4363736064283118}
   - component: {fileID: 33869965418030430}
   - component: {fileID: 23950878388416634}
-  - component: {fileID: -3934367911848997932}
+  - component: {fileID: -7966196098715920295}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Long_Germany_C
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &-3934367911848997932
+--- !u!64 &-7966196098715920295
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c0d32f1a729bd4e429cc91fb3b406d3b, type: 3}

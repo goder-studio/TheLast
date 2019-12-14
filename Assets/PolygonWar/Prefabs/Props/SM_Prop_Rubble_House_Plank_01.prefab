@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4168369012203684}
   - component: {fileID: 33031871079301956}
   - component: {fileID: 23133736783120798}
-  - component: {fileID: 8456918017032236040}
+  - component: {fileID: -1692661960973326420}
   m_Layer: 0
   m_Name: SM_Prop_Rubble_House_Plank_01
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8456918017032236040
+--- !u!64 &-1692661960973326420
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a7226b964dace7648aafeb18410f7932, type: 3}

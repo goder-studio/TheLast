@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4148768396446710}
   - component: {fileID: 33074248775448612}
   - component: {fileID: 23343359424850656}
-  - component: {fileID: 7612620111403882618}
+  - component: {fileID: 3365362503736848590}
   m_Layer: 0
   m_Name: SM_Prop_Flag_Straight_Russian
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7612620111403882618
+--- !u!64 &3365362503736848590
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 45d66946f944a7543a78444bfbff1869, type: 3}

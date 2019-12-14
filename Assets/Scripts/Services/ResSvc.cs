@@ -86,7 +86,7 @@ public class ResSvc : MonoBehaviour
     /// <param name="path"></param>
     /// <param name="cache"></param>
     /// <returns></returns>
-    public GameObject LoadPrefab(string path, bool cache = false)
+    public GameObject LoadPrefab(string path,bool cache = false)
     {
         GameObject prefab = null;
         if(!prefabDicts.TryGetValue(path,out prefab))
@@ -101,6 +101,25 @@ public class ResSvc : MonoBehaviour
         if(prefab != null)
         {
             go = Instantiate(prefab);
+        }
+        return go;
+    }
+
+    public GameObject LoadPrefab(string path,Vector3 spawnPos,Quaternion quaternion, bool cache = false)
+    {
+        GameObject prefab = null;
+        if (!prefabDicts.TryGetValue(path, out prefab))
+        {
+            prefab = Resources.Load<GameObject>(path);
+            if (cache)
+            {
+                prefabDicts.Add(path, prefab);
+            }
+        }
+        GameObject go = null;
+        if (prefab != null)
+        {
+            go = Instantiate(prefab,spawnPos,quaternion);
         }
         return go;
     }

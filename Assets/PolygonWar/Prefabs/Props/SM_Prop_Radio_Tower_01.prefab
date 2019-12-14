@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33383551773520214}
   - component: {fileID: 23766322311080656}
   - component: {fileID: 95360565742826488}
-  - component: {fileID: -910699972290299904}
+  - component: {fileID: -1567334111834014}
   m_Layer: 0
   m_Name: SM_Prop_Radio_Tower_01
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &-910699972290299904
+--- !u!64 &-1567334111834014
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,6 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a8a4d5572c02a304d89fe6204b1a97c0, type: 3}
