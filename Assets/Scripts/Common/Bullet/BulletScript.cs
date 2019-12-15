@@ -37,7 +37,7 @@ public class BulletScript : MonoBehaviour {
 		}
 
 		//If bullet collides with "Metal" tag
-		if (collision.transform.tag == "Metal" || collision.transform.tag == "Env") 
+		if (collision.transform.tag == "Metal" || collision.transform.tag == "Env" || collision.transform.tag == "Building") 
 		{
 			//生成弹痕
 			Instantiate (metalImpactPrefabs [Random.Range 
@@ -72,18 +72,25 @@ public class BulletScript : MonoBehaviour {
             EntityPlayer player = BattleSys.Instance.GetPlayer();
             //获取被子弹达到的敌人逻辑实体
             EntityEnemy enemy = BattleSys.Instance.GetEnemyByName(enemyName);
+            
             if(enemy != null)
             {
-                //进入受击状态
-                enemy.Hit();
+                if (enemy.Hp <= 0)
+                    return;
+
                 //敌人扣血
                 enemy.Hp -= player.Props.damage;
+
+                if(enemy.Hp > 0)
+                {
+                    //进入受击状态
+                    enemy.Hit();
+                }
                 //如果敌人血量耗尽，敌人死亡
-                if (enemy.Hp <= 0)
+                else
                 {
                     enemy.Die();
                     enemy.battleMgr.RemoveEnemy(enemyName);
-                    //GameManager.Instance.RemoveEnemy(enemy.Name);
                 }
                 //获取碰撞点
                 ContactPoint contact = collision.contacts[0];

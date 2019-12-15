@@ -25,7 +25,7 @@ public class ResSvc : MonoBehaviour
 
     public void InitSvc()
     {
-        InitEnemyWaveCfgs(PathDefine.enemyWaveCfgs);
+        InitEnemyWaveCfgs(Application.streamingAssetsPath + PathDefine.enemyWaveCfgs);
         Debug.Log("Init ResSvc Done");
     }
 
@@ -226,6 +226,7 @@ public class ResSvc : MonoBehaviour
             {
                 waveIndex = ID,
                 enemyBattleProps = new BattleProps(),
+                enemyPosList = new List<Vector3>(),
             };
             XmlNodeList fieldNodeList = node.ChildNodes;
             foreach(XmlNode fieldNode in fieldNodeList)
@@ -237,6 +238,18 @@ public class ResSvc : MonoBehaviour
                         break;
                     case "spawnInterval":
                         enemyWave.enemySpawnInterval = float.Parse(fieldNode.InnerText);
+                        break;
+                    case "enemyPosList":
+                        string[] enemyPosArr = fieldNode.InnerText.Split('|');
+                        foreach(string posStr in enemyPosArr)
+                        {
+                            string[] coordinates = posStr.Split(',');
+                            float xPos = float.Parse(coordinates[0]);
+                            float yPos = float.Parse(coordinates[1]);
+                            float zPos = float.Parse(coordinates[2]);
+                            Vector3 enemyPos = new Vector3(xPos, yPos, zPos);
+                            enemyWave.enemyPosList.Add(enemyPos);
+                        }
                         break;
                     case "enemyCount":
                         enemyWave.enemyCount = int.Parse(fieldNode.InnerText);

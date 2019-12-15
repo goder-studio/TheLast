@@ -43,4 +43,10 @@ public class Constant
     public const int SceneMainID = 1;
     public const int SceneBattleID = 2;
 
+    public const string failTips = "You Are Dead！！！";
+    public static Color failTipsColor = Color.red;
+    public const string winTips = "You Survived！！！";
+    public static Color winTipsColor = Color.green;
+
+
 }

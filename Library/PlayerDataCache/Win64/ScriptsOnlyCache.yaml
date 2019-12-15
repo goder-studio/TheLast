@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - ButtonInteraction
     - CasingScript
     - DebrisScript
+    - EndPanel
     - EnemyController
     - ExplosionScript
     - ExplosiveBarrelScript
@@ -100,11 +101,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9774}
     - Class: 114
-      Script: {instanceID: 10002}
+      Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10022}
+      Script: {instanceID: 10024}
     - Class: 114
-      Script: {instanceID: 10110}
+      Script: {instanceID: 10112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -142,9 +143,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 84
       Script: {instanceID: 0}
@@ -157,6 +164,20 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9426}
+    - Class: 114
+      Script: {instanceID: 9476}
+    - Class: 114
+      Script: {instanceID: 9774}
+    - Class: 114
+      Script: {instanceID: 10024}
+    - Class: 114
+      Script: {instanceID: 10112}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -211,8 +232,6 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -297,41 +316,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9976}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10002}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 10022}
+      Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10030}
+      Script: {instanceID: 10024}
     - Class: 114
-      Script: {instanceID: 10034}
+      Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10062}
+      Script: {instanceID: 10036}
     - Class: 114
-      Script: {instanceID: 10068}
+      Script: {instanceID: 10064}
     - Class: 114
-      Script: {instanceID: 10110}
+      Script: {instanceID: 10070}
     - Class: 114
-      Script: {instanceID: 10190}
+      Script: {instanceID: 10112}
     - Class: 114
-      Script: {instanceID: 10274}
+      Script: {instanceID: 10192}
     - Class: 114
-      Script: {instanceID: 10310}
+      Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10330}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10434}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10488}
+      Script: {instanceID: 10436}
     - Class: 114
-      Script: {instanceID: 10548}
+      Script: {instanceID: 10490}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10550}
     - Class: 114
-      Script: {instanceID: 10606}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 10612}
+      Script: {instanceID: 10608}
+    - Class: 114
+      Script: {instanceID: 10614}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -353,6 +374,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -985,6 +1008,12 @@ ScriptsOnlyBuild:
     className: BulletScript
   - hash:
       serializedVersion: 2
+      Hash: 50aec989ac3f25afad217df6d0354826
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EndPanel
+  - hash:
+      serializedVersion: 2
       Hash: 704dcd31abc789439bc3f3cd10b58c2b
     assemblyName: DOTween.dll
     namespaceName: DG.Tweening.Core
@@ -1141,7 +1170,7 @@ ScriptsOnlyBuild:
     className: BasePanel
   - hash:
       serializedVersion: 2
-      Hash: 43e72ce624933c5549a3a92090ab62ce
+      Hash: 7b0b155233deb3c7c21d9ecf36029e6b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BattleSys
@@ -1301,4 +1330,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/BattleScene_War.unity
   - Assets/Scenes/BattleScene_Test.unity
-  playerPath: C:/Users/asus/Desktop/DontStopShooting/DontStopShooting.exe
+  playerPath: D:/Unity exe/DontStopShooting.exe

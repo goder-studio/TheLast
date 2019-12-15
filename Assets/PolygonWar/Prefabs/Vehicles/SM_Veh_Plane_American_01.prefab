@@ -1401,7 +1401,7 @@ GameObject:
   - component: {fileID: 8341839101519084809}
   m_Layer: 0
   m_Name: SM_Veh_Plane_American_01
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

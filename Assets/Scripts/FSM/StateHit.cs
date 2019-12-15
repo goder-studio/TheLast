@@ -32,12 +32,12 @@ public class StateHit : IState
         entity.SetAction(Constant.ActionHit);
         TimerSvc.Instance.AddTimeTask((int tid) =>
         {
-            entity.SetAction(Constant.ActionDefault);
             if(entity.aniState != AniState.Die)
             {
+                entity.SetAction(Constant.ActionDefault);
                 entity.Idle();
             }
-            
+
         },entity.GetAniLength(Constant.AniHitName));
     }
 }

@@ -26,7 +26,7 @@ public class StartPanel : BasePanel
         SetWindowState(false);
         StartSys.Instance.settingPanel.SetWindowState(false);
         StartSys.Instance.instructionPanel.SetWindowState(false);
-        BattleSys.Instance.EnterBattle();
+        BattleSys.Instance.EnterBattle(true);
     }
 
     private void OnInstructionBtnClick()

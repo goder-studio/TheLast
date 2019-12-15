@@ -8,6 +8,8 @@ public class EnemyWave
     public int waveIndex;
     //敌人生成间隔
     public float enemySpawnInterval;
+    //敌人的位置
+    public List<Vector3> enemyPosList;
     //敌人数目
     public int enemyCount;
     //敌人属性
@@ -41,8 +43,15 @@ public class BattleMgr : MonoBehaviour
     {
         //暂停状态下，跳过Update()的逻辑处理
         if (GameManager.Instance.isPauseGame)
+        {
+            foreach(EntityEnemy entityEnemy in enemyDicts.Values)
+            {
+                entityEnemy.StopInNav();
+            }
             return;
-
+        }
+           
+        
         if(mipmapCamera != null)
         {
             mipmapCamera.transform.position = playerController.transform.position + new Vector3(0, 30, 0);
@@ -78,6 +87,11 @@ public class BattleMgr : MonoBehaviour
                     intervalTimer = 0;
                     //StartCoroutine(DelaySpawnEnemy(curEnemyWave.delayTime));
                     DelayTimeSpawnEnemy(curEnemyWave.delayTime);
+                }
+                //所有波次都已结束,显示结束界面
+                else if (curWaveIndex == enemyWaveList.Count - 1)
+                {
+                    BattleSys.Instance.ShowEndPanel(Constant.winTips, Constant.winTipsColor);
                 }
             }
         }
@@ -161,7 +175,7 @@ public class BattleMgr : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject enemy = resSvc.LoadPrefab(PathDefine.EnemyPrefab, new Vector3(5.0f, -1.0f, 11.0f),Quaternion.identity);
+        GameObject enemy = resSvc.LoadPrefab(PathDefine.EnemyPrefab, curEnemyWave.enemyPosList[enemyCount],Quaternion.identity);
         if(enemy != null)
         {
             enemy.transform.localScale = Vector3.one;

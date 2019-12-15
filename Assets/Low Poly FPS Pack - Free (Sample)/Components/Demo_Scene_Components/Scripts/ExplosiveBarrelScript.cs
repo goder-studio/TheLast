@@ -80,12 +80,22 @@ public class ExplosiveBarrelScript : MonoBehaviour {
                 EntityEnemy enemy = BattleSys.Instance.GetEnemyByName(enemyName);
                 if (enemy != null)
                 {
-                    enemy.Hp -= explosiondamage;
-                    if(enemy.Hp <= 0)
+                    if (enemy.Hp >  0)
                     {
-                        enemy.Die();
-                        enemy.battleMgr.RemoveEnemy(enemyName);
+                        enemy.Hp -= explosiondamage;
+                        if (enemy.Hp > 0)
+                        {
+                            //进入受击状态
+                            enemy.Hit();
+                        }
+                        //如果敌人血量耗尽，敌人死亡
+                        else
+                        {
+                            enemy.Die();
+                            enemy.battleMgr.RemoveEnemy(enemyName);
+                        }
                     }
+                       
                 }
             }
 

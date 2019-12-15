@@ -23,6 +23,7 @@ public class BattleSys : SystemRoot
     public OptionPanel optionPanel;
     public PausePanel pausePanel;
     public MipMapPanel mipmapPanel;
+    public EndPanel endPanel;
 
     private BattleMgr battleMgr;
 
@@ -32,17 +33,18 @@ public class BattleSys : SystemRoot
         Debug.Log("Init BattleSys Done");
     }
 
-    public void EnterBattle()
+    public void EnterBattle(bool isWait)
     {
         resSvc.AsyncLoadScene(Constant.SceneBattleID, () =>
         {
             battleMgr = gameObject.AddComponent<BattleMgr>();
             battleMgr.Init();
+
             playerPanel.SetWindowState(true);
             mipmapPanel.SetWindowState(true);
             audioSvc.StopBgMusic();
             //GameManager.Instance.HideCursor();
-        },true);
+        },isWait);
     }
 
     public void ShakeCamera(float duration, float strength = 3, int vibrato = 10, float randomness = 90)
@@ -57,6 +59,7 @@ public class BattleSys : SystemRoot
         optionPanel.SetWindowState(false);
         pausePanel.SetWindowState(false);
         mipmapPanel.SetWindowState(false);
+        endPanel.SetWindowState(false);
     }
 
     //PlayerPanel
@@ -160,6 +163,15 @@ public class BattleSys : SystemRoot
     public void SetCountDown(int time)
     {
         playerPanel.SetCountDown(time);
+    }
+
+    //EndPanel
+    public void ShowEndPanel(string text,Color textColor)
+    {
+        GameManager.Instance.ShowCursor();
+        GameManager.Instance.isPauseGame = true;
+        endPanel.SetInfo(text, textColor);
+        endPanel.SetWindowState(true);
     }
 
     //MipMapPanel

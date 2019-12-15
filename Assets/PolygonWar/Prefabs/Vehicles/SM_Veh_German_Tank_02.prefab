@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 6963759263965018460}
   m_Layer: 0
   m_Name: SM_Veh_German_Tank_02
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

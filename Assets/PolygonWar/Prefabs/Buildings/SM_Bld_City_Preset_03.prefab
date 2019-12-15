@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 6231971326962907047}
   m_Layer: 0
   m_Name: SM_Bld_City_Preset_03
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

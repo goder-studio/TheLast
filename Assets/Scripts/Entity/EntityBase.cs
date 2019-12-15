@@ -20,35 +20,25 @@ public class EntityBase
 {
     public EntityType entityType = EntityType.None;
 
-    private string name;
+    protected string name;
     public string Name
     {
         get { return name; }
         set { name = value; }
     }
 
-    private BattleProps props;
+    protected BattleProps props;
     public BattleProps Props
     {
         get { return props; }
         set { props = value; }
     }
 
-    private int hp;
-    public int Hp
+    protected int hp;
+    public virtual int Hp
     {
-        get { return hp; }
-        set
-        {
-
-            hp = value;
-            if(entityType == EntityType.Player)
-            {
-                //更新血条显示
-                BattleSys.Instance.SetHp(hp);
-            }
-
-        }
+        get { return hp; } 
+        set { hp = value; }
     }
 
     public virtual Vector3 GetPos() {

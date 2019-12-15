@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6226473193925156388}
   m_Layer: 0
   m_Name: SM_Bld_Bunker_Gun_Damaged_01
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

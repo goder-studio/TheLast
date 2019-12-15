@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\Test\DecoratorSword.cs" />
     <Compile Include="Assets\Scripts\Test\Test.cs" />
     <Compile Include="Assets\Scripts\UIPanel\BasePanel.cs" />
+    <Compile Include="Assets\Scripts\UIPanel\EndPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\InstructionPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\LoadingPanel.cs" />
     <Compile Include="Assets\Scripts\UIPanel\MipMapPanel.cs" />
@@ -125,7 +126,7 @@
     <None Include="Assets\PolygonZombies\Shaders\POLYGON_Zombies.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
     <None Include="Assets\Readme.txt" />
-    <None Include="Assets\Resources\Cfgs\EnemyWave.xml" />
+    <None Include="Assets\StreamingAssets\Cfgs\EnemyWave.xml" />
     <None Include="Assets\PolygonWar\Materials\Shader\Particle VertexLit Blended_Backface.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />

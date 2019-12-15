@@ -19,10 +19,11 @@ public class PathDefine
     public const string btnClickSound = "Audios/btnClick";
     public const string btnHoverSound = "Audios/btnHover";
     public const string bgMusic = "Audios/bgMusic";
+    public const string playerHitSound = "Audios/playerHit";
 
     public const string AniOpenOptionPanel = "Animation/OpenOptionPanel";
     public const string AniCloseOptionPanel = "Animation/CloseOptionPanel";
     public const string AniCountDown = "Animation/CountDown";
 
-    public const string enemyWaveCfgs = "Assets/Resources/Cfgs/EnemyWave.xml";
+    public const string enemyWaveCfgs =  "/Cfgs/EnemyWave.xml";
 }

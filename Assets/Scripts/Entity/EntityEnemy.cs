@@ -7,6 +7,19 @@ public class EntityEnemy : EntityBase
     public StateMgr stateMgr = null;
     public BattleMgr battleMgr = null;
 
+    public override int Hp
+    {
+        get { return hp; }
+        set
+        {
+            hp = value;
+            if(hp <= props.hp * 0.3f)
+            {
+                Crazy();
+            }
+        }
+    }
+
     private EnemyController controller;
 
     //敌人控制模式（CharacterController/NavMeshAgent）
@@ -51,10 +64,16 @@ public class EntityEnemy : EntityBase
 
     public void TickAllLogic()
     {
-        if (controller.CanDestroy)
+        if (hp <= 0 )
         {
             return;
         }
+           
+
+        //if (controller.CanDestroy)
+        //{
+        //    return;
+        //}        
 
         if(runAI == false)
         {
@@ -83,8 +102,6 @@ public class EntityEnemy : EntityBase
 
                     if (Hp <= Props.hp * 0.3f) 
                     {
-                        //敌人变红
-                        Crazy();
                         Run();
                     }
                     else
@@ -170,7 +187,13 @@ public class EntityEnemy : EntityBase
         Debug.Log(InDistance(this.GetPos(), player.GetPos(), atkDistance) + " " + InAngle(this.GetTrans(), player.GetPos(), atkAngle));
         if (InDistance(this.GetPos(), player.GetPos(), atkDistance) && InAngle(this.GetTrans(), player.GetPos(), atkAngle))
         {
+            //播放受击音效
+            AudioSvc.Instance.PlayEffectSound(PathDefine.playerHitSound);
             player.Hp -= this.Props.damage;
+            if(player.Hp <= 0)
+            {
+                player.Hp = 0;
+            }
             BattleSys.Instance.ShakeCamera(0.5f, 0.2f, 20);
         }
     }

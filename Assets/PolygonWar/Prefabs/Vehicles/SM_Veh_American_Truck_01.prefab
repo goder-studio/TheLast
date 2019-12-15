@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 1807002337035599876}
   m_Layer: 0
   m_Name: SM_Veh_American_Truck_01
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

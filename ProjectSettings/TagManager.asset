@@ -10,6 +10,7 @@ TagManager:
   - Env
   - Enemy
   - Bullet
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - Mipmap
-  - 
+  - Player
   - 
   - 
   - 

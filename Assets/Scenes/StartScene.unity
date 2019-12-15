@@ -361,31 +361,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1799566246, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f, type: 3}
-      propertyPath: mipmapPanel
-      value: 
-      objectReference: {fileID: 1900751102}
-    - target: {fileID: 1900751101, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f, type: 3}
+    - target: {fileID: 2259607856788004229, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1727051402, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727051404, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f, type: 3}
---- !u!1 &1900751101 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1900751101, guid: c02c7f7b9bb2a0f43b30ac9f8bdd7c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361484734}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1900751102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900751101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee9b22be10620234da1d9205268a5885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

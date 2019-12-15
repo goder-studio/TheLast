@@ -17,6 +17,7 @@ public class StateDie : IState
 
     public void OnProcess(EntityEnemy entity)
     {
+        entity.SetSpeed(0);
         entity.SetAction(Constant.ActionDie);
         BattleSys.Instance.AddKillCount();
         //动画播放结束后销毁敌人
