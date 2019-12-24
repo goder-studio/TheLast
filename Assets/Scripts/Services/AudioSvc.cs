@@ -28,8 +28,10 @@ public class AudioSvc : MonoBehaviour
 
     public void InitSvc()
     {
-        isActiveBgMusic = true;
-        isActiveEffectSound = true;
+        //isActiveBgMusic = GameManager.Instance.GameConfig.isActiveBgMusic;
+        //isActiveEffectSound = GameManager.Instance.GameConfig.isActiveEffectSound;
+        //bgMusicAudio.volume = GameManager.Instance.GameConfig.bgMusicVolumn;
+        //effectSoundAudio.volume = GameManager.Instance.GameConfig.effectSoundVolumn;
         Debug.Log("Init AudioSvc Done");
     }
 
@@ -62,12 +64,14 @@ public class AudioSvc : MonoBehaviour
     public void SetBgMusicVolumn(float volumn)
     {
         bgMusicAudio.volume = volumn;
+        GameManager.Instance.SaveGameConfigurationByBinary();
     }
 
     //激活背景音乐
     public void ActiveBgMusic()
     {
         isActiveBgMusic = true;
+        GameManager.Instance.SaveGameConfigurationByBinary();
         if (bgMusicAudio != null)
         {
             bgMusicAudio.mute = false;
@@ -78,6 +82,7 @@ public class AudioSvc : MonoBehaviour
     public void InActiveBgMusic()
     {
         isActiveBgMusic = false;
+        GameManager.Instance.SaveGameConfigurationByBinary();
         if (bgMusicAudio != null)
         {
             bgMusicAudio.mute = true;
@@ -95,13 +100,15 @@ public class AudioSvc : MonoBehaviour
     public void SetEffectSoundVolumn(float volumn)
     {
         effectSoundAudio.volume = volumn;
+        GameManager.Instance.SaveGameConfigurationByBinary();
     }
 
     //激活游戏音效
     public void ActiveEffectSound()
     {
         isActiveEffectSound = true;
-        if(effectSoundAudio != null)
+        GameManager.Instance.SaveGameConfigurationByBinary();
+        if (effectSoundAudio != null)
         {
             effectSoundAudio.mute = false;
         }
@@ -111,6 +118,7 @@ public class AudioSvc : MonoBehaviour
     public void InActiveEffectSound()
     {
         isActiveEffectSound = false;
+        GameManager.Instance.SaveGameConfigurationByBinary();
         if (effectSoundAudio != null)
         {
             effectSoundAudio.mute = true;

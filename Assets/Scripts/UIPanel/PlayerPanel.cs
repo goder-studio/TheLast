@@ -52,6 +52,9 @@ public class PlayerPanel : BasePanel
     {
         txtCountDown.color = Color.white;
         txtCountDown.transform.localScale = Vector3.one;
+        string tips = "开火模式：";
+        tips += shootmode.ToString();
+        SetText(txtSwitchShootMode, tips);
         SetText(txtCurrentAmmo, weaponName);
         SetText(txtTotalAmmo, totalAmmo);
         SetText(txtCurrentShootMode, shootmode.ToString());

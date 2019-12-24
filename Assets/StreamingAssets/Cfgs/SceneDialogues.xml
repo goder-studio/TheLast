@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item ID = "0">
+		<sceneID>2</sceneID>
+		<dialogArr>
+		#-1|周围的人|谢天谢地,你终于醒了|Sprites/ephor|Sprites/SceneWarIcon2|
+		#-1|我|我怎么在这？我睡了多久了？|Sprites/bg|Sprites/SceneWarIcon2|
+		#-1|村长|全国爆发了丧尸病毒，我们村子里许多人也被感染了，派来的军队也都束手无策，现在村子里的所有人都在这里了|Sprites/bg|Sprites/SceneWarIcon2|
+		#-1|房间外的声音|咚..咚...咚.....|Sprites/ephor|Sprites/SceneWarIcon2|
+		#-1|周围的人|啊，情况不妙，我们被发现了，丧尸正在朝我们这里聚集|Sprites/ephor|Sprites/SceneWarIcon2|
+		#-1|村长|大家不要慌张，大不了我们拼了|Sprites/ephor|Sprites/SceneWarIcon2|
+		#-1||（士兵缓缓站起来，拿起了武器）|Sprites/bg|Sprites/SceneWarIcon2|
+		#-1|我|在这呆着，不要出去，你们会安全的|Sprites/bg|Sprites/SceneWarIcon2|
+		#-1||（士兵冲出了房间......）|Sprites/bg|Sprites/SceneWarIcon2|
+		</dialogArr>
+	</item>
+	<item ID = "1">
+		<sceneID>3</sceneID>
+		<dialogArr>
+		#-1|队长|干的不错，欢迎回来|Sprites/bg|Sprites/SceneCityIcon|
+		#-1|我|这是我的职责|Sprites/bg|Sprites/SceneCityIcon|
+		#-1|队长|好！不愧是我的兵，觉悟很高|Sprites/bg|Sprites/SceneCityIcon|
+		#-1|队长|能者多劳，这是新的任务，快去吧！|Sprites/bg|Sprites/SceneCityIcon|
+		#-1|我|......|Sprites/bg|Sprites/SceneCityIcon|
+		#-1|队长|愣着干什么！还要我送你吗？|Sprites/bg|Sprites/SceneCityIcon|
+	</dialogArr>
+	</item>
+</root>

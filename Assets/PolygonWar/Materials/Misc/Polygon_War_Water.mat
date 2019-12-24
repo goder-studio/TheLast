@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Polygon_War_Water
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
-  m_LightmapFlags: 1
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -63,9 +63,9 @@ Material:
     - _DstBlend: 10
     - _EmissionScaleUI: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.38
     - _GlossyReflections: 1
-    - _Metallic: 0.29
+    - _Metallic: 0.39
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -75,6 +75,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.100346014, g: 0.22412598, b: 0.2352941, a: 0.20784314}
+    - _Color: {r: 0.33947882, g: 0.628197, b: 0.6691177, a: 0.20784314}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}

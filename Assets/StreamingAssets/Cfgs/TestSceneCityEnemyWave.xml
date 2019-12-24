@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item ID = "1">
+		<delayTime>5.0</delayTime>
+		<spawnInterval>1.2</spawnInterval>
+		<enemyPosList>5.0,-1.0,11.0|31.3,-1.0,-2.42</enemyPosList>
+		<enemyCount>2</enemyCount>
+		<enemyHp>100</enemyHp>
+		<enemyDamage>10</enemyDamage>
+	</item>
+</root>

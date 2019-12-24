@@ -25,7 +25,7 @@ public class ResSvc : MonoBehaviour
 
     public void InitSvc()
     {
-        InitEnemyWaveCfgs(Application.streamingAssetsPath + PathDefine.enemyWaveCfgs);
+        InitDialogueCfgs(Application.streamingAssetsPath + PathDefine.SceneDialogueCfgs);
         Debug.Log("Init ResSvc Done");
     }
 
@@ -210,10 +210,13 @@ public class ResSvc : MonoBehaviour
     }
 
     #region 初始化配置文件
+
+    #region 敌人波次信息
     private Dictionary<int, EnemyWave> enemyWaveDicts = new Dictionary<int, EnemyWave>();
 
     public void InitEnemyWaveCfgs(string path)
     {
+        enemyWaveDicts.Clear();
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.Load(path);
 
@@ -288,5 +291,71 @@ public class ResSvc : MonoBehaviour
         }
         return results;
     }
+    #endregion
+
+
+    #region 对话配置文件
+    private Dictionary<int, DialogueCfg> dialogueCfgDicts = new Dictionary<int, DialogueCfg>();
+
+    public void InitDialogueCfgs(string path)
+    {
+        dialogueCfgDicts.Clear();
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.Load(path);
+
+        XmlNode root = xmlDoc.SelectSingleNode("root");
+        XmlNodeList nodeList = root.ChildNodes;
+        foreach(XmlNode node in nodeList)
+        {
+            int ID = int.Parse(node.Attributes["ID"].Value);
+            DialogueCfg dialogueCfg = new DialogueCfg {
+                dialoguesList = new List<DialogueInfo>()
+            };
+            XmlNodeList fieldNodeList = node.ChildNodes;
+            foreach(XmlNode fieldNode in fieldNodeList)
+            {
+                switch(fieldNode.Name)
+                {
+                    case "sceneID":
+                        dialogueCfg.sceneID = int.Parse(fieldNode.InnerText);
+                        break;
+                    case "dialogArr":
+                        string[] dialogArr = fieldNode.InnerText.Split('#');
+                        for(int index = 0; index < dialogArr.Length; index++)
+                        {
+                            if (index == 0)
+                                continue;
+                            string[] infoArr = dialogArr[index].Split('|');
+
+                            DialogueInfo dialogueInfo = new DialogueInfo { };
+                            dialogueInfo.roleID = int.Parse(infoArr[0]);
+                            dialogueInfo.name = infoArr[1];
+                            dialogueInfo.detail = infoArr[2];
+                            dialogueInfo.spritePath = infoArr[3];
+                            dialogueInfo.bgPath = infoArr[4];
+
+                            dialogueCfg.dialoguesList.Add(dialogueInfo);
+                        }
+                        break;
+                }
+            }
+            if(!dialogueCfgDicts.ContainsKey(ID))
+            {
+                dialogueCfgDicts.Add(ID, dialogueCfg);
+            }
+        }
+    }
+
+    public DialogueCfg GetCurDialogueCfg(int id)
+    {
+        DialogueCfg dialogueCfg = null;
+        if(dialogueCfgDicts.TryGetValue(id,out dialogueCfg))
+        {
+            return dialogueCfg;
+        }
+        return null;
+    }
+
+    #endregion
     #endregion
 }

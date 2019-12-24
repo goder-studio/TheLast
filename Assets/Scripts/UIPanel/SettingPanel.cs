@@ -38,7 +38,9 @@ public class SettingPanel : BasePanel
         btn_ControlBgMusic.GetComponent<Image>().sprite = 
             audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
         btn_ControlEffectSound.GetComponent<Image>().sprite =
-            audioSvc.isActiveBgMusic ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
+            audioSvc.isActiveEffectSound ? resSvc.LoadSprite(PathDefine.checkSprite) : resSvc.LoadSprite(PathDefine.checknotSprite);
+        bgMusicVolumnSlider.value = audioSvc.bgMusicAudio.volume;
+        effectSoundVolumnSlider.value = audioSvc.effectSoundAudio.volume;
     }
 
     private void OnBtnControlBgMusicClick()

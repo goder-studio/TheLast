@@ -24,6 +24,7 @@ public class StartSys : SystemRoot
     public StartPanel startPanel;
     public InstructionPanel instructionPanel;
     public SettingPanel settingPanel;
+    public ChooseLevelPanel chooseLevelPanel;
 
     public override void InitSys()
     {
@@ -35,6 +36,11 @@ public class StartSys : SystemRoot
     {
         startPanel.SetWindowState(true);
         audioSvc.PlayBgMusic(PathDefine.bgMusic);
+        if (!audioSvc.isActiveBgMusic)
+        {
+            audioSvc.InActiveBgMusic();
+        }
+        
     }
 
     public void OpenInstructionPanel()
@@ -42,6 +48,10 @@ public class StartSys : SystemRoot
         if(settingPanel.gameObject.activeInHierarchy)
         {
             settingPanel.SetWindowState(false);
+        }
+        if(chooseLevelPanel.gameObject.activeInHierarchy)
+        {
+            chooseLevelPanel.SetWindowState(false);
         }
         if(!instructionPanel.gameObject.activeInHierarchy)
         {
@@ -52,13 +62,42 @@ public class StartSys : SystemRoot
 
     public void OpenSettingPanel()
     {
-        if(!settingPanel.gameObject.activeInHierarchy)
-        {
-            settingPanel.SetWindowState(true);
-        }
-        if(instructionPanel.gameObject.activeInHierarchy)
+        if (instructionPanel.gameObject.activeInHierarchy)
         {
             instructionPanel.SetWindowState(false);
         }
+        if (chooseLevelPanel.gameObject.activeInHierarchy)
+        {
+            chooseLevelPanel.SetWindowState(false);
+        }
+        if (!settingPanel.gameObject.activeInHierarchy)
+        {
+            settingPanel.SetWindowState(true);
+        }
+    }
+
+    public void OpenChooseLevelPanel()
+    {
+        if (instructionPanel.gameObject.activeInHierarchy)
+        {
+            instructionPanel.SetWindowState(false);
+        }
+        if (settingPanel.gameObject.activeInHierarchy)
+        {
+            settingPanel.SetWindowState(false);
+        }
+        if (!chooseLevelPanel.gameObject.activeInHierarchy)
+        {
+            chooseLevelPanel.SetWindowState(true);
+        }
+
+    }
+
+    public void HideAllPanel()
+    {
+        startPanel.SetWindowState(false);
+        settingPanel.SetWindowState(false);
+        instructionPanel.SetWindowState(false);
+        chooseLevelPanel.SetWindowState(false);
     }
 }

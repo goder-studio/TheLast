@@ -41,12 +41,53 @@ public class Constant
 
     public const int SceneStartID = 0;
     public const int SceneMainID = 1;
-    public const int SceneBattleID = 2;
+    public const int SceneBattleWarID = 2;
+    public const int SceneBattleCityID = 3;
+    public const int SceneDialogueID = 4;
 
     public const string failTips = "You Are Dead！！！";
     public static Color failTipsColor = Color.red;
     public const string winTips = "You Survived！！！";
     public static Color winTipsColor = Color.green;
 
+    public const int levelCount = 2;
 
+
+}
+
+public enum LevelType
+{
+    LevelWar,
+    LevelCity,
+}
+
+
+
+public class EnemyWave
+{
+    public float delayTime;
+    public int waveIndex;
+    //敌人生成间隔
+    public float enemySpawnInterval;
+    //敌人的位置
+    public List<Vector3> enemyPosList;
+    //敌人数目
+    public int enemyCount;
+    //敌人属性
+    public BattleProps enemyBattleProps;
+}
+
+public class DialogueCfg
+{
+    public int sceneID;
+    public List<DialogueInfo> dialoguesList;
+}
+
+public class DialogueInfo
+{
+    public int roleID;
+    public string name;
+    public string detail;
+    public string spritePath;
+    public string bgPath;
 }

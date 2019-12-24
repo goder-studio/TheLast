@@ -22,28 +22,21 @@ public class StartPanel : BasePanel
 
     private void OnStartBtnClick()
     {
-        //audioSvc.PlayEffectSound(PathDefine.btnClickSound);
-        SetWindowState(false);
-        StartSys.Instance.settingPanel.SetWindowState(false);
-        StartSys.Instance.instructionPanel.SetWindowState(false);
-        BattleSys.Instance.EnterBattle(true);
+        StartSys.Instance.OpenChooseLevelPanel();
     }
 
     private void OnInstructionBtnClick()
     {
-        //audioSvc.PlayEffectSound(PathDefine.btnClickSound);
         StartSys.Instance.OpenInstructionPanel();
     }
 
     private void OnSettingBtnClick()
     {
-        //audioSvc.PlayEffectSound(PathDefine.btnClickSound);
         StartSys.Instance.OpenSettingPanel();
     }
 
     private void OnExitBtnClick()
     {
-        //audioSvc.PlayEffectSound(PathDefine.btnClickSound);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

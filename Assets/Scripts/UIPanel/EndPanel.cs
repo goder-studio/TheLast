@@ -29,7 +29,21 @@ public class EndPanel : BasePanel
         Destroy(GameManager.Instance.GetComponent<BattleMgr>());
         Destroy(GameManager.Instance.GetComponent<StateMgr>());
 
-        BattleSys.Instance.EnterBattle(false);
+        //根据当前所在场景重新加载
+        BattleSys.Instance.EnterBattle(BattleSys.Instance.CurLevel.sceneID,false);
+
+        //switch(BattleSys.Instance.CurLevel)
+        //{
+        //    case BattleSceneState.SceneWar:
+        //        BattleSys.Instance.EnterBattle(Constant.SceneBattleWarID, false);
+        //        break;
+        //    case BattleSceneState.SceneCity:
+        //        BattleSys.Instance.EnterBattle(Constant.SceneBattleCityID, false);
+        //        break;
+        //    default:
+        //        break;
+        //}
+        
     }
 
     private  void OnBtnBackClick()

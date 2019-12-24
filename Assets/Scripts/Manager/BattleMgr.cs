@@ -2,19 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWave
-{
-    public float delayTime;
-    public int waveIndex;
-    //敌人生成间隔
-    public float enemySpawnInterval;
-    //敌人的位置
-    public List<Vector3> enemyPosList;
-    //敌人数目
-    public int enemyCount;
-    //敌人属性
-    public BattleProps enemyBattleProps;
-}
 
 public class BattleMgr : MonoBehaviour
 {
@@ -91,7 +78,9 @@ public class BattleMgr : MonoBehaviour
                 //所有波次都已结束,显示结束界面
                 else if (curWaveIndex == enemyWaveList.Count - 1)
                 {
-                    BattleSys.Instance.ShowEndPanel(Constant.winTips, Constant.winTipsColor);
+                    GameManager.Instance.UpdateLevelActiveArr();
+                    GameManager.Instance.UpdateLevelPassArr();
+                    BattleSys.Instance.ShowEndPanel(Constant.winTips, Constant.winTipsColor);                    
                 }
             }
         }

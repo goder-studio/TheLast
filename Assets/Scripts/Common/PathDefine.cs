@@ -25,5 +25,9 @@ public class PathDefine
     public const string AniCloseOptionPanel = "Animation/CloseOptionPanel";
     public const string AniCountDown = "Animation/CountDown";
 
-    public const string enemyWaveCfgs =  "/Cfgs/EnemyWave.xml";
+    public const string SceneWarEnemyWaveCfgs =  "/Cfgs/SceneWarEnemyWave.xml";
+    public const string SceneCityEnemyWaveCfgs = "/Cfgs/SceneCityEnemyWave.xml";
+    public const string SceneDialogueCfgs = "/Cfgs/SceneDialogues.xml";
+    public const string TesttSceneWarEnemyWaveCfgs = "/Cfgs/TestSceneWarEnemyWave.xml";
+    public const string TestSceneCityEnemyWaveCfgs = "/Cfgs/TestSceneCityEnemyWave.xml";
 }

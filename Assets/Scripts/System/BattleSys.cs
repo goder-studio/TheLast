@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BattleSceneState
+{
+    Default,
+    SceneWar,
+    SceneCity,
+}
+
+
 public class BattleSys : SystemRoot
 {
     #region 单例模式
@@ -25,6 +33,13 @@ public class BattleSys : SystemRoot
     public MipMapPanel mipmapPanel;
     public EndPanel endPanel;
 
+    private BaseLevel curLevel;
+    public BaseLevel CurLevel
+    {
+        get { return curLevel; }
+        set { curLevel = value; }
+    }
+
     private BattleMgr battleMgr;
 
     public override void InitSys()
@@ -33,10 +48,21 @@ public class BattleSys : SystemRoot
         Debug.Log("Init BattleSys Done");
     }
 
-    public void EnterBattle(bool isWait)
+    public void EnterBattle(int battleSceneID,bool isWait)
     {
-        resSvc.AsyncLoadScene(Constant.SceneBattleID, () =>
+        resSvc.AsyncLoadScene(battleSceneID, () =>
         {
+            switch(battleSceneID)
+            {
+                case Constant.SceneBattleWarID:
+                    curLevel = GameManager.Instance.levelMgr.GetBaseLevel(LevelType.LevelWar);
+                    resSvc.InitEnemyWaveCfgs(Application.streamingAssetsPath + PathDefine.SceneWarEnemyWaveCfgs);
+                    break;
+                case Constant.SceneBattleCityID:
+                    curLevel = GameManager.Instance.levelMgr.GetBaseLevel(LevelType.LevelCity);
+                    resSvc.InitEnemyWaveCfgs(Application.streamingAssetsPath + PathDefine.SceneCityEnemyWaveCfgs);
+                    break;
+            }
             battleMgr = gameObject.AddComponent<BattleMgr>();
             battleMgr.Init();
 

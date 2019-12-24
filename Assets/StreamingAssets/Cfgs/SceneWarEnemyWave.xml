@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item ID = "1">
+		<delayTime>5.0</delayTime>
+		<spawnInterval>1.2</spawnInterval>
+		<enemyPosList>5.0,-1.0,11.0|31.3,-1.0,8.9|10.7,0,23|18.5,0,-2.2</enemyPosList>
+		<enemyCount>4</enemyCount>
+		<enemyHp>100</enemyHp>
+		<enemyDamage>10</enemyDamage>
+	</item>
+	<item ID = "2">
+		<delayTime>8.0</delayTime>
+		<spawnInterval>1.0</spawnInterval> 
+		<enemyPosList>5.0,-1.0,11.0|31.3,-1.0,8.9|10.7,0,23|18.5,0,-2.2|31.3,-1.0,8.9|20.05,-1.0,9.28</enemyPosList> 
+		<enemyCount>6</enemyCount> 
+		<enemyHp>150</enemyHp> 
+		<enemyDamage>15</enemyDamage> 
+	</item> 
+	<item ID = "3"> 
+		<delayTime>10.0</delayTime> 
+		<spawnInterval>0.8</spawnInterval> 
+		<enemyCount>8</enemyCount> 
+		<enemyPosList>5.0,-1.0,11.0|31.3,-1.0,8.9|10.7,0,23|18.5,0,-2.2|31.3,-1.0,8.9|5.0,-1.0,11.0|20.05,-1.0,9.28|19.05,-1.0,23.42</enemyPosList> 
+		<enemyHp>200</enemyHp> 
+		<enemyDamage>20</enemyDamage> 
+	</item> 
+</root>
